@@ -1,9 +1,9 @@
 {
-  "name": "@nextail/providers",
+  "name": "@nextail/utils",
   "version": "0.0.1",
   "scripts": {
     "build": "pnpm run clean && pnpm run compile",
-    "clean": "rimraf -rf ./dist",
+    "clean": "rimraf -rf ./lib",
     "compile": "tsc -p tsconfig.build.json",
     "prepublishOnly": "pnpm run build"
   },

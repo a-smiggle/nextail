@@ -1,6 +1,6 @@
 {
   "name": "nextail",
-  "description": "Template for setting up a TypeScript monorepo",
+  "description": "",
   "private": true,
   "workspaces": [
     "examples/*",
@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "setup": "rm -rf node_modules && rm -rf ./packages/*/node_modules && rm -rf ./websites/*/node_modules && rm -rf ./examples/*/node_modules && pnpm i",
+    "setup": "rm -rf node_modules && rm -rf ./packages/*/node_modules && rm -rf ./websites/*/node_modules && rm -rf ./examples/*/node_modules && rm -f pnpm-lock.yaml && pnpm i",
     "build": "pnpm run clean && pnpm -r --filter ./packages run build && pnpm -r --filter ./websites run build",
-    "clean": "rimraf packages/*/dist && rimraf websites/*/.next && rimraf examples/*/.next",
+    "clean": "rimraf packages/*/lib && rimraf websites/*/.next && rimraf examples/*/.next",
     "lint": "eslint --ext js,ts,tsx .",
     "lint_fix": "eslint --fix --ext js,ts,tsx ."
   },

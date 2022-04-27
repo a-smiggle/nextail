@@ -4,8 +4,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@nighttrax/components/*": ["packages/components/src/*"],
-      "@nighttrax/*": ["packages/*/src"]
+      "@nextail/core/*": ["packages/core/src/*"],
+      "@nextail/hooks/*": ["packages/hooks/src/*"],
+      "@nextail/utils/*": ["packages/utils/src/*"],
+      "@nextail/utils/*": ["packages/providers/src/*"]
     },
     "noEmit": true
   }
