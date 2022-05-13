@@ -1,7 +1,7 @@
 {
   "name": "nextail",
   "description": "",
-  "private": true,
+  "private": false,
   "workspaces": [
     "examples/*",
     "packages/*",
