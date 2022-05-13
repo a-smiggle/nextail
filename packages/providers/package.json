@@ -1,6 +1,17 @@
 {
   "name": "@nextail/providers",
   "version": "0.0.1",
+  "license": "MIT",
+  "private": false,
+  "author": "a-smiggle",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a-smiggle/nextail.git",
+    "directory": "packages/providers"
+  },
+  "files": [
+    "/lib"
+  ],
   "scripts": {
     "build": "pnpm run clean && pnpm run compile",
     "clean": "rimraf -rf ./lib",
@@ -8,7 +19,8 @@
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
-    "react": "~18.0.0"
+    "react": "~18.0.0",
+    "react-dom": "~18.0.0"
   },
   "devDependencies": {
     "@types/react": "~18.0.0",
