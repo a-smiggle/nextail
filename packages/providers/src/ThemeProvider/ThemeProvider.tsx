@@ -6,11 +6,11 @@ import React, {
   useState,
 } from 'react';
 
-type CustomProps = {
+export type CustomProps = {
   children: ReactNode;
 };
 
-type ThemeValue = {
+export type ThemeValue = {
   theme: string;
   updateTheme: (newTheme: string) => void;
   toggleTheme: () => void;
