@@ -14,7 +14,6 @@ export default function Drawer(
       return (
         <TopDrawer
           toggle={props.toggle}
-          clickOutside={props.clickOutside}
           open={props.open}
           mainStylings={props.mainStylings}
         >
@@ -25,7 +24,6 @@ export default function Drawer(
       return (
         <BottomDrawer
           toggle={props.toggle}
-          clickOutside={props.clickOutside}
           open={props.open}
           mainStylings={props.mainStylings}
         >
@@ -36,7 +34,6 @@ export default function Drawer(
       return (
         <RightDrawer
           toggle={props.toggle}
-          clickOutside={props.clickOutside}
           open={props.open}
           mainStylings={props.mainStylings}
         >
@@ -47,7 +44,6 @@ export default function Drawer(
       return (
         <LeftDrawer
           toggle={props.toggle}
-          clickOutside={props.clickOutside}
           open={props.open}
           mainStylings={props.mainStylings}
         >
@@ -58,7 +54,6 @@ export default function Drawer(
       return (
         <RightDrawer
           toggle={props.toggle}
-          clickOutside={props.clickOutside}
           open={props.open}
           mainStylings={props.mainStylings}
         >

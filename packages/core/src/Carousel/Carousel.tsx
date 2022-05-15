@@ -3,10 +3,13 @@ import React, { ReactElement, useEffect, useState } from 'react';
 import Button from '../Button';
 import createStylings from '../stylings';
 import { CarouselProps } from './types';
+import { useInterval } from 'usehooks-ts'
+
 
 function Carousel(props: CarouselProps): ReactElement {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
   const [id, setId] = useState(0);
 
   function handlePrevious() {
@@ -24,23 +27,16 @@ function Carousel(props: CarouselProps): ReactElement {
   }
 
   function handlePause() {
-    if (!paused) clearTimeout(id);
-    if (paused) {
-      setId(setTimeout(() => handleNext(), props.interval || 5000));
-      clearTimeout(id);
-    }
     setPaused(!paused);
   }
 
-  useEffect(() => {
-    if (props.timer) {
-      if (!paused) {
-        setId(setTimeout(() => handleNext(), props.interval || 5000));
-        return () => clearTimeout(id);
-      }
-    }
-    return null;
-  }, [current]);
+  useInterval(
+    () => {
+      if (!paused) {handleNext()}
+    },
+    // Delay in milliseconds or null to stop it
+    props.timer && !paused ? props.interval || 5000 : null,
+  )
 
   const mainStylings = props.mainStylings ? props.mainStylings : {};
   if (mainStylings) {
@@ -87,9 +83,12 @@ function Carousel(props: CarouselProps): ReactElement {
   }
 
   return (
-    <div className={`w-full relative flex overflow-hidden`}>
+    <div
+      className={`w-full flex overflow-hidden ${
+        fullscreen ? 'absolute h-screen top-0 left-0' : 'relative'
+      }`}
+    >
       {props.data.map((data, index) => (
-        <>
           <div
             key={index}
             className={`${
@@ -98,31 +97,31 @@ function Carousel(props: CarouselProps): ReactElement {
               index !== current && index > current ? 'translate-x-full' : ''
             } ${
               index !== current && index < current ? '-translate-x-full' : ''
-            } w-full ${
+            } ${
               props.mainStylings?.className
                 ? props.mainStylings.className
                 : createStylings(mainStylings)
             }`}
           >
             {data.element}
-          </div>
-          <div
-            className={`${
-              index === current ? '' : 'opacity-0'
-            } w-full absolute bottom-0`}
-          >
-            <div className="mx-auto mb-10 w-3/4 flex-col text-center">
-              <p className={createStylings(titleStylings)}>{data.title}</p>
-              <p className={createStylings(descriptionStylings)}>
-                {data.description}
-              </p>
+            <div
+              className={`${
+                index === current ? '' : 'opacity-0'
+              } w-full absolute bottom-0`}
+            >
+              <div className="mx-auto mb-10 w-3/4 flex-col text-center">
+                <p className={createStylings(titleStylings)}>{data.title}</p>
+                <p className={createStylings(descriptionStylings)}>
+                  {data.description}
+                </p>
+              </div>
             </div>
           </div>
-        </>
       ))}
-      {props.timer ? (
-        <div className="absolute inset-5">
+      <div className="absolute inset-x-5 flex justify-between">
+        {props.timer ? (
           <Button
+            key={'Carousel-pause'}
             onClick={() => handlePause()}
             mainStylings={props.buttonStylings}
           >
@@ -163,10 +162,51 @@ function Carousel(props: CarouselProps): ReactElement {
               </svg>
             )}
           </Button>
-        </div>
-      ) : null}
+        ) : (
+          <div></div>
+        )}
+        <Button
+          key={'Carousel-screen'}
+          onClick={() => setFullscreen(!fullscreen)}
+          mainStylings={props.buttonStylings}
+        >
+          {fullscreen ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+              />
+            </svg>
+          )}
+        </Button>
+      </div>
+
       <div className="absolute inset-x-5 top-1/2 flex -translate-y-1/2 justify-between">
         <Button
+          key={'Carousel-left'}
           onClick={() => handlePrevious()}
           mainStylings={props.buttonStylings}
         >
@@ -186,6 +226,7 @@ function Carousel(props: CarouselProps): ReactElement {
           </svg>
         </Button>
         <Button
+          key={'Carousel-right'}
           onClick={() => handleNext()}
           mainStylings={props.buttonStylings}
         >

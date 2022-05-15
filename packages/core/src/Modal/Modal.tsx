@@ -1,4 +1,5 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { PropsWithChildren, ReactElement, useRef } from 'react';
+import { useOnClickOutside } from 'usehooks-ts';
 
 import createStylings from '../stylings';
 import { ModalProps } from './types';
@@ -65,6 +66,14 @@ export default function Modal(
       ? props.mainStylings.effect.boxShadow
       : 'shadow-lg';
   }
+  const ref = useRef(null);
+
+  const handleOutsideClick = () => {
+    if (props.toggle) props.toggle(false);
+  };
+
+  useOnClickOutside(ref, handleOutsideClick);
+
   return (
     <div
       className={
@@ -74,14 +83,13 @@ export default function Modal(
       }
     >
       <div
-        ref={props.clickOutside}
+        ref={ref}
         className={
           props.mainStylings?.className
             ? props.mainStylings.className
             : createStylings(mainStylings)
         }
       >
-        {props.toggle ? props.toggle : null}
         {props.header ? props.header : null}
         {props.body ? props.body : null}
         {props.footer ? props.footer : null}

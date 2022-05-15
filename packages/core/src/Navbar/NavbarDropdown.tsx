@@ -17,6 +17,7 @@ function NavbarDropdown(props: CustomProps) {
 
   return (
     <Dropdown
+      toggle={setOpen}
       mainStylings={props.dropdownStylings}
       itemStylings={props.dropdownItemStylings}
       items={props.data.subMenu}

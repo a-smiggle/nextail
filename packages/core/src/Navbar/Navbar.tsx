@@ -91,14 +91,14 @@ function Navbar(props: NavbarProps) {
         }
       >
         <div className="flex items-center">
-          {props.data.logo}
-          {props.data.title}
+          {props.data?.logo}
+          {props.data?.title}
         </div>
 
         <div className="flex items-center justify-between">
           <div className="hidden md:flex md:items-center md:justify-between">
-            {props.data.menu.map((data, index) => {
-              if (data.subMenu?.length > 0) {
+            {props.data?.menu?.map((data, index) => {
+              if (data && data.subMenu && data.subMenu?.length > 0) {
                 return (
                   <NavbarDropdown
                     key={index}
@@ -152,8 +152,8 @@ function Navbar(props: NavbarProps) {
           mobileStylings
         )}`}
       >
-        {props.data.menu.map((data, index) => {
-          if (data.subMenu?.length > 0) {
+        {props.data?.menu?.map((data, index) => {
+          if (data && data.subMenu && data.subMenu?.length > 0) {
             return (
               <div key={index}>
                 <Accordion

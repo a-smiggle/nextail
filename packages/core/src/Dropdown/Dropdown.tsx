@@ -1,4 +1,5 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useRef } from 'react';
+import { useOnClickOutside } from 'usehooks-ts';
 
 import createStylings from '../stylings';
 import { DropdownProps } from './types';
@@ -70,12 +71,20 @@ function Dropdown(props: DropdownProps): ReactElement {
       : 'divide-y';
   }
 
+  const ref = useRef(null);
+
+  const handleOutsideClick = () => {
+    if (props.open && props.toggle) props.toggle(false);
+  };
+
+  useOnClickOutside(ref, handleOutsideClick);
+
   return (
     <>
       <div className="relative">
         {props.button}
         <div
-          ref={props.clickOutside}
+          ref={ref}
           className={`${props.open ? '' : 'hidden'} ${
             props.mainStylings?.className
               ? props.mainStylings.className
@@ -88,7 +97,7 @@ function Dropdown(props: DropdownProps): ReactElement {
             aria-orientation="vertical"
             aria-labelledby="options-menu"
           >
-            {props.items.map((item, index) => {
+            {props.items?.map((item, index) => {
               if (item.divider)
                 return (
                   <div key={index} className={createStylings(dividerStylings)}>

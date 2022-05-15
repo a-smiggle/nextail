@@ -1,10 +1,9 @@
-import { MutableRefObject, ReactNode } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
 
 import { TailwindStylings } from '../types';
 
 export interface ModalProps {
-  toggle?: ReactNode;
-  clickOutside?: MutableRefObject<any>;
+  toggle?: Dispatch<SetStateAction<boolean>>;
   header?: ReactNode;
   body?: ReactNode;
   footer?: ReactNode;

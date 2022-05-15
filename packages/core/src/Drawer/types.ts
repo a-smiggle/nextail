@@ -1,11 +1,10 @@
-import { MutableRefObject, ReactNode } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 import { TailwindStylings } from '../types';
 
 export interface DrawerProps {
   open: boolean;
-  clickOutside?: MutableRefObject<any>;
-  toggle?: ReactNode;
+  toggle?: Dispatch<SetStateAction<boolean>>;
   postion?: 'top' | 'bottom' | 'right' | 'left';
   mainStylings?: TailwindStylings;
 }

@@ -1,4 +1,4 @@
-import { MutableRefObject, ReactNode } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
 
 import { TailwindStylings } from '../types';
 
@@ -13,7 +13,7 @@ interface DropdownItem {
 
 export interface DropdownProps {
   open: boolean;
-  clickOutside?: MutableRefObject<any>;
+  toggle?: Dispatch<SetStateAction<boolean>>;
   button: ReactNode;
   mainStylings?: TailwindStylings;
   itemStylings?: TailwindStylings;

@@ -7,7 +7,7 @@ const SuccesDropdown = (props: DropdownProps) => (
   <Dropdown
     button={props.button}
     open={props.open}
-    clickOutside={props.clickOutside}
+    toggle={props.toggle}
     items={props.items}
     mainStylings={{
       background: { backgroundColor: 'bg-green-100' },
@@ -25,7 +25,7 @@ const SuccesOutlineDropdown = (props: DropdownProps) => (
   <Dropdown
     button={props.button}
     open={props.open}
-    clickOutside={props.clickOutside}
+    toggle={props.toggle}
     items={props.items}
     mainStylings={{
       border: { ringColor: 'ring-green-500' },
@@ -42,7 +42,7 @@ const WarningDropdown = (props: DropdownProps) => (
   <Dropdown
     button={props.button}
     open={props.open}
-    clickOutside={props.clickOutside}
+    toggle={props.toggle}
     items={props.items}
     mainStylings={{
       background: { backgroundColor: 'bg-yellow-100' },
@@ -60,7 +60,7 @@ const WarningOutlineDropdown = (props: DropdownProps) => (
   <Dropdown
     button={props.button}
     open={props.open}
-    clickOutside={props.clickOutside}
+    toggle={props.toggle}
     items={props.items}
     mainStylings={{
       border: { ringColor: 'ring-yellow-500' },
@@ -77,7 +77,7 @@ const ErrorDropdown = (props: DropdownProps) => (
   <Dropdown
     button={props.button}
     open={props.open}
-    clickOutside={props.clickOutside}
+    toggle={props.toggle}
     items={props.items}
     mainStylings={{
       background: { backgroundColor: 'bg-red-100' },
@@ -95,7 +95,7 @@ const ErrorOutlineDropdown = (props: DropdownProps) => (
   <Dropdown
     button={props.button}
     open={props.open}
-    clickOutside={props.clickOutside}
+    toggle={props.toggle}
     items={props.items}
     mainStylings={{
       border: { ringColor: 'ring-red-500' },
@@ -112,7 +112,7 @@ const InfoDropdown = (props: DropdownProps) => (
   <Dropdown
     button={props.button}
     open={props.open}
-    clickOutside={props.clickOutside}
+    toggle={props.toggle}
     items={props.items}
     mainStylings={{
       background: { backgroundColor: 'bg-sky-100' },
@@ -130,7 +130,7 @@ const InfoOutlineDropdown = (props: DropdownProps) => (
   <Dropdown
     button={props.button}
     open={props.open}
-    clickOutside={props.clickOutside}
+    toggle={props.toggle}
     items={props.items}
     mainStylings={{
       border: { ringColor: 'ring-sky-500 ring-opacity-25' },

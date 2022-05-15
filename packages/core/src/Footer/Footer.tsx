@@ -85,7 +85,7 @@ function Footer(props: PropsWithChildren<FooterProps>): ReactElement {
       ) : null}
 
       <div className="space-x-2 md:flex md:items-center md:justify-between">
-        {props.data.links.map((data, index) => (
+        {props.data?.links?.map((data, index) => (
           <a
             key={index}
             href={data.link}

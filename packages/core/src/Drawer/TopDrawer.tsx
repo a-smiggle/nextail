@@ -1,4 +1,5 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { useRef, PropsWithChildren, ReactElement } from 'react';
+import { useOnClickOutside } from 'usehooks-ts'
 
 import createStylings from '../stylings';
 import { DrawerProps } from './types';
@@ -51,16 +52,22 @@ function TopDrawer(props: PropsWithChildren<DrawerProps>): ReactElement {
     if (!mainStylings.text) mainStylings.text = {};
     mainStylings.text.textColor = 'text-black dark:text-slate-300';
   }
+
+  const ref = useRef(null);
+
+  const handleOutsideClick = () => { if(props.open && props.toggle) props.toggle(false)}
+
+  useOnClickOutside(ref, handleOutsideClick);
+
   return (
     <aside
-      ref={props.clickOutside}
+      ref={ref}
       className={`${
         props.mainStylings?.className
           ? props.mainStylings.className
           : createStylings(mainStylings)
       } ${props.open ? '' : 'hidden'}`}
     >
-      {props.toggle}
       {props.children}
     </aside>
   );
