@@ -3,7 +3,7 @@ import React, { PropsWithChildren } from 'react';
 import Button from './Button';
 import { ButtonProps } from './types';
 
-const SuccesButton = (props: PropsWithChildren<ButtonProps>) => (
+const SuccessButton = (props: PropsWithChildren<ButtonProps>) => (
   <Button
     type={props.type}
     onClick={props.onClick}
@@ -22,7 +22,7 @@ const SuccesButton = (props: PropsWithChildren<ButtonProps>) => (
   </Button>
 );
 
-const SuccesOutlineButton = (props: PropsWithChildren<ButtonProps>) => (
+const SuccessOutlineButton = (props: PropsWithChildren<ButtonProps>) => (
   <Button
     type={props.type}
     onClick={props.onClick}
@@ -188,8 +188,8 @@ export {
   ErrorOutlineButton,
   InfoButton,
   InfoOutlineButton,
-  SuccesButton,
-  SuccesOutlineButton,
+  SuccessButton,
+  SuccessOutlineButton,
   WarningButton,
   WarningOutlineButton,
 };
