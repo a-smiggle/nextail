@@ -1,4 +1,5 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { PropsWithChildren, ReactElement, useRef } from 'react';
+import { useOnClickOutside } from 'usehooks-ts';
 
 import createStylings from '../stylings';
 import AlertContainerProps from './types';
@@ -45,7 +46,7 @@ export default function AlertContainer(
     if (!mainStylings.layout) mainStylings.layout = {};
     mainStylings.layout.position = props.mainStylings?.layout?.position
       ? props.mainStylings?.layout?.position
-      : 'absolute';
+      : 'fixed';
     mainStylings.layout.top = props.mainStylings?.layout?.top
       ? props.mainStylings.layout.top
       : 'top-0';
@@ -64,6 +65,14 @@ export default function AlertContainer(
       : 'max-w-sm';
   }
 
+  const ref = useRef(null);
+
+  const handleOutsideClick = () => {
+    if (props.toggle) props.toggle(false);
+  };
+
+  useOnClickOutside(ref, handleOutsideClick);
+
   return (
     <>
       {props.backgroundStylings ? (
@@ -76,14 +85,13 @@ export default function AlertContainer(
         />
       ) : null}
       <div
-        ref={props.clickOutside}
+        ref={ref}
         className={`${
           props.mainStylings?.className
             ? props.mainStylings.className
             : createStylings(mainStylings)
         } ${props.open ? '' : 'hidden'}`}
       >
-        {props.toggle}
         {props.children}
       </div>
     </>

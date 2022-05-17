@@ -1,11 +1,10 @@
-import { MutableRefObject, ReactNode } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 import { TailwindStylings } from '../types';
 
 export default interface AlertContainerProps {
   open: boolean;
-  toggle?: ReactNode;
-  clickOutside?: MutableRefObject<any>;
+  toggle?: Dispatch<SetStateAction<boolean>>;
   backgroundStylings?: TailwindStylings;
   mainStylings?: TailwindStylings;
 }
