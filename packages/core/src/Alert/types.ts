@@ -11,7 +11,5 @@ export interface AlertData {
 }
 
 export interface AlertProps {
-  data?: AlertData;
   mainStylings?: TailwindStylings;
-  flush?: boolean;
 }

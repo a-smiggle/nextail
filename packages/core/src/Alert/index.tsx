@@ -29,7 +29,6 @@ const AlertBody = (props: AlertData) => {
 const SuccessAlert = (props: AlertData) => {
   return (
     <Alert
-      data={props}
       mainStylings={{
         background: { backgroundColor: 'bg-green-300' },
         border: {
@@ -47,7 +46,6 @@ const SuccessAlert = (props: AlertData) => {
 const WarningAlert = (props: AlertData) => {
   return (
     <Alert
-      data={props}
       mainStylings={{
         background: { backgroundColor: 'bg-yellow-300' },
         border: {
@@ -65,7 +63,6 @@ const WarningAlert = (props: AlertData) => {
 const ErrorAlert = (props: AlertData) => {
   return (
     <Alert
-      data={props}
       mainStylings={{
         background: { backgroundColor: 'bg-red-300' },
         border: { borderWidth: 'border-l-4', borderColor: 'border-red-700' },
@@ -80,7 +77,6 @@ const ErrorAlert = (props: AlertData) => {
 const InfoAlert = (props: AlertData) => {
   return (
     <Alert
-      data={props}
       mainStylings={{
         background: { backgroundColor: 'bg-sky-300' },
         border: { borderWidth: 'border-l-4', borderColor: 'border-sky-700' },
