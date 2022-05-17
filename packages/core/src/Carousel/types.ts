@@ -10,6 +10,7 @@ export interface CarouselData {
 
 export interface CarouselProps {
   data: CarouselData[];
+  fullscreen?: boolean;
   mainStylings?: TailwindStylings;
   titleStylings?: TailwindStylings;
   descriptionStylings?: TailwindStylings;
