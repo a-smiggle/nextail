@@ -138,11 +138,13 @@ export default function Avatar(
 
     // Loads random image.
     return (
-      <img
-        className="mx-auto h-20 w-20 rounded-full object-cover"
-        alt="avatar"
-        src="https://api.lorem.space/image/face?w=150&h=150"
-      />
+      <div className="h-20 w-20 rounded-full">
+        <img
+          className="mx-auto h-20 w-20 rounded-full object-cover"
+          alt="avatar"
+          src="https://api.lorem.space/image/face?w=150&h=150"
+        />
+      </div>
     );
   }
 
