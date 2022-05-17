@@ -31,13 +31,13 @@ const ImageCard = (props: CardData) => (
       />
     </a>
     <div className="px-4 pb-2 pt-6">
-      <h5 className="mb-2 text-xl font-medium text-gray-900">
+      <h5 className="mb-2 text-xl font-medium text-gray-900 dark:text-white">
         {props.title ? props.title : 'Title Here'}
       </h5>
-      <p className="mb-4 text-base text-gray-700">
+      <p className="mb-4 text-base text-gray-700 dark:text-gray-200">
         {props.info ? props.info : INFO}
       </p>
-      <p className="text-xs text-gray-600">
+      <p className="text-xs text-gray-600 dark:text-gray-300">
         {props.secondaryInfo ? props.secondaryInfo : ''}
       </p>
       {props.button ? props.button : null}
@@ -48,13 +48,13 @@ const ImageCard = (props: CardData) => (
 const ImageBottomCard = (props: CardData) => (
   <Card mainStylings={{ spacing: { padding: ' ' } }}>
     <div className="px-4 pb-2 pt-6">
-      <h5 className="mb-2 text-xl font-medium text-gray-900">
+      <h5 className="mb-2 text-xl font-medium text-gray-900 dark:text-white">
         {props.title ? props.title : 'Title Here'}
       </h5>
-      <p className="mb-4 text-base text-gray-700">
+      <p className="mb-4 text-base text-gray-700 dark:text-gray-200">
         {props.info ? props.info : INFO}
       </p>
-      <p className="text-xs text-gray-600">
+      <p className="text-xs text-gray-600 dark:text-gray-300">
         {props.secondaryInfo ? props.secondaryInfo : ''}
       </p>
       {props.button ? props.button : null}
@@ -83,13 +83,13 @@ const ImageLeftCard = (props: CardData) => (
       alt=""
     />
     <div className="flex flex-col justify-start px-4 pb-2 pt-6">
-      <h5 className="mb-2 text-xl font-medium text-gray-900">
+      <h5 className="mb-2 text-xl font-medium text-gray-900 dark:text-white">
         {props.title ? props.title : 'Title Here'}
       </h5>
-      <p className="mb-4 text-base text-gray-700">
+      <p className="mb-4 text-base text-gray-700 dark:text-gray-200">
         {props.info ? props.info : INFO}
       </p>
-      <p className="text-xs text-gray-600">
+      <p className="text-xs text-gray-600 dark:text-gray-300">
         {props.secondaryInfo ? props.secondaryInfo : ''}
       </p>
       {props.button ? props.button : null}
@@ -106,19 +106,19 @@ const ImageRightCard = (props: CardData) => (
     }}
   >
     <div className="flex flex-col justify-start px-4 pb-2 pt-6">
-      <h5 className="mb-2 text-xl font-medium text-gray-900">
+      <h5 className="mb-2 text-xl font-medium text-gray-900 dark:text-white">
         {props.title ? props.title : 'Title Here'}
       </h5>
-      <p className="mb-4 text-base text-gray-700">
+      <p className="mb-4 text-base text-gray-700 dark:text-gray-200">
         {props.info ? props.info : INFO}
       </p>
-      <p className="text-xs text-gray-600">
+      <p className="text-xs text-gray-600 dark:text-gray-300">
         {props.secondaryInfo ? props.secondaryInfo : ''}
       </p>
       {props.button ? props.button : null}
     </div>
     <img
-      className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-r-lg"
+      className="h-96 w-full rounded-b-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-r-lg"
       src={props.image ? props.image : 'https://api.lorem.space/image/book'}
       alt=""
     />
