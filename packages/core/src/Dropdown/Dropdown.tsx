@@ -85,7 +85,7 @@ function Dropdown(props: DropdownProps): ReactElement {
         {props.button}
         <div
           ref={ref}
-          className={`${props.open ? '' : 'hidden'} ${
+          className={`${props.open ? 'z-50' : 'hidden'} ${
             props.mainStylings?.className
               ? props.mainStylings.className
               : createStylings(mainStylings)
