@@ -61,8 +61,24 @@ export default function Progress(props: ProgressProps): ReactElement {
     if (!mainStylings.sizing) mainStylings.sizing = {};
     mainStylings.sizing.height = 'h-full';
     if (!mainStylings.flexboxGrid) mainStylings.flexboxGrid = {};
-    mainStylings.flexboxGrid.alignItems = 'items-center';
-    mainStylings.flexboxGrid.justifyItems = 'justify-center';
+    mainStylings.flexboxGrid.alignItems = props.mainStylings?.flexboxGrid
+      ?.alignItems
+      ? props.mainStylings.flexboxGrid.alignItems
+      : 'items-center';
+    mainStylings.flexboxGrid.justifyItems = props.mainStylings?.flexboxGrid
+      ?.justifyItems
+      ? props.mainStylings.flexboxGrid.justifyItems
+      : 'justify-center';
+    if (!mainStylings.transitionAnimation)
+      mainStylings.transitionAnimation = {};
+    mainStylings.transitionAnimation.transitionProperty = props.mainStylings
+      ?.transitionAnimation?.transitionProperty
+      ? props.mainStylings.transitionAnimation.transitionProperty
+      : 'transition-all';
+    mainStylings.transitionAnimation.transitionDuration = props.mainStylings
+      ?.transitionAnimation?.transitionDuration
+      ? props.mainStylings.transitionAnimation.transitionDuration
+      : 'duration-500';
   }
   return (
     <div
@@ -73,7 +89,7 @@ export default function Progress(props: ProgressProps): ReactElement {
       }
     >
       <div
-        style={{ width: `${props.progress ? props.progress : 50}%` }}
+        style={{ width: `${props.progress ? props.progress : 0}%` }}
         className={
           props.mainStylings?.className
             ? props.mainStylings.className
