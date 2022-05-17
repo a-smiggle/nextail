@@ -15,7 +15,7 @@ export default function Modal(
     if (!backdropStylings.layout) backdropStylings.layout = {};
     backdropStylings.layout.position = props.backdropStylings?.layout?.position
       ? props.backdropStylings.layout.position
-      : 'absolute';
+      : 'fixed';
     backdropStylings.layout.display = props.backdropStylings?.layout?.display
       ? props.backdropStylings.layout.display
       : 'flex';
@@ -29,11 +29,7 @@ export default function Modal(
     backdropStylings.background.backgroundColor = props.backdropStylings
       ?.background?.backgroundColor
       ? props.backdropStylings.background.backgroundColor
-      : 'bg-slate-700';
-    if (!backdropStylings.effect) backdropStylings.effect = {};
-    backdropStylings.effect.opacity = props.backdropStylings?.effect?.opacity
-      ? props.backdropStylings.effect.opacity
-      : 'opacity-50';
+      : 'bg-slate-700/50';
   }
   const mainStylings = props.mainStylings ? props.mainStylings : {};
   if (mainStylings) {
@@ -76,11 +72,11 @@ export default function Modal(
 
   return (
     <div
-      className={
+      className={`${props.open ? '' : 'hidden'} ${
         props.backdropStylings?.className
           ? props.backdropStylings.className
           : createStylings(backdropStylings)
-      }
+      }`}
     >
       <div
         ref={ref}
