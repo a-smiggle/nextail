@@ -1,8 +1,8 @@
-import React, { useRef, PropsWithChildren, ReactElement } from 'react';
+import React, { PropsWithChildren, ReactElement, useRef } from 'react';
+import { useOnClickOutside } from 'usehooks-ts';
 
 import createStylings from '../stylings';
 import { DrawerProps } from './types';
-import { useOnClickOutside } from 'usehooks-ts'
 
 function BottomDrawer(props: PropsWithChildren<DrawerProps>): ReactElement {
   const mainStylings = props.mainStylings ? props.mainStylings : {};
@@ -55,7 +55,9 @@ function BottomDrawer(props: PropsWithChildren<DrawerProps>): ReactElement {
 
   const ref = useRef(null);
 
-  const handleOutsideClick = () => { if(props.open && props.toggle) props.toggle(false)}
+  const handleOutsideClick = () => {
+    if (props.open && props.toggle) props.toggle(false);
+  };
 
   useOnClickOutside(ref, handleOutsideClick);
 

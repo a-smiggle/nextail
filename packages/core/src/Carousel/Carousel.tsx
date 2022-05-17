@@ -9,7 +9,6 @@ function Carousel(props: CarouselProps): ReactElement {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
-  const [id, setId] = useState(0);
 
   function handlePrevious() {
     let i = current;
