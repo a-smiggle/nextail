@@ -24,6 +24,7 @@ function Layout({ children }) {
               title: 'Preview',
               link: '/preview',
             },
+            { title: 'Docs', link: 'https://nextail-docs.vercel.app' },
           ],
           buttons: (
             <Button
@@ -119,7 +120,7 @@ function Layout({ children }) {
           ),
           links: [
             { title: 'About', link: '/about' },
-            { title: 'Contact', link: '/contact' },
+            { title: 'Documentation', link: 'https://nextail-docs.vercel.app' },
           ],
           buttons: (
             <a
