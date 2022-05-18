@@ -24,6 +24,7 @@ import Card, {
   ImageRightCard,
 } from '@nextail/core/Card';
 import Carousel from '@nextail/core/Carousel';
+import CodeSnippet from '@nextail/core/CodeSnippet';
 import Drawer from '@nextail/core/Drawer';
 import Dropdown, {
   ErrorDropdown,
@@ -109,12 +110,9 @@ const Home: NextPage = () => {
   return (
     <>
       <Layout>
-        <div
-          className="h-fit w-full bg-white bg-cover bg-no-repeat dark:bg-emerald-900"
-          style={{ backgroundImage: 'url(/EmeraldDivider.svg)' }}
-        >
+        <div className="h-fit w-full bg-white bg-cover bg-no-repeat dark:bg-emerald-900">
           <div className="grid gap-4 p-4 md:grid-cols-3">
-            <div className="col-span-1 w-full rounded bg-emerald-500/20 p-6 shadow-lg">
+            <div className="col-span-1 w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20">
               <h1 className="pb-6 text-2xl font-bold text-white">Buttons</h1>
               <div className="grid grid-cols-2 gap-4 md:grid-cols-4 ">
                 <Button>Plain</Button>
@@ -127,7 +125,7 @@ const Home: NextPage = () => {
                 <ErrorOutlineButton>Error</ErrorOutlineButton>
               </div>
             </div>
-            <div className="col-span-1 w-full rounded bg-emerald-500/20 p-6 shadow-lg">
+            <div className="col-span-1 w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20">
               <h1 className="pb-6 text-2xl font-bold text-white">Dropdowns</h1>
               <div className="grid grid-cols-2 gap-4 md:grid-cols-4 ">
                 <Dropdown
@@ -276,7 +274,7 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>
-            <div className="col-span-1 w-full rounded bg-emerald-500/20 p-6 shadow-lg">
+            <div className="col-span-1 w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20">
               <h1 className="pb-6 text-2xl font-bold text-white">Avatars</h1>
               <div className="grid grid-cols-2 gap-4 md:grid-cols-4 ">
                 <div>
@@ -299,7 +297,7 @@ const Home: NextPage = () => {
                 </AvatarGroup>
               </div>
             </div>
-            <div className="col-span-1 w-full rounded bg-emerald-500/20 p-6 shadow-lg md:col-span-3">
+            <div className="col-span-1 w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20 md:col-span-3">
               <h1 className="pb-6 text-2xl font-bold text-white">Carousel</h1>
               <Carousel
                 mainStylings={{
@@ -349,7 +347,7 @@ const Home: NextPage = () => {
                 ]}
               />
             </div>
-            <div className="col-span-1 w-full rounded bg-emerald-500/20 p-6 shadow-lg md:col-span-3">
+            <div className="col-span-1 w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20 md:col-span-3">
               <h1 className="pb-6 text-2xl font-bold text-white">Cards</h1>
               <div className="space-y-2 md:flex md:justify-between md:space-x-2">
                 <div>
@@ -368,7 +366,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-1 w-full rounded bg-emerald-500/20 p-6 shadow-lg md:col-span-3">
+            <div className="col-span-1 w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20 md:col-span-3">
               <h1 className="pb-6 text-2xl font-bold text-white">Skeletons</h1>
               <div className="space-y-2 md:flex md:justify-between md:space-x-2">
                 <div>
@@ -383,7 +381,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full rounded bg-emerald-500/20 p-6 shadow-lg">
+            <div className="w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20">
               <h1 className="pb-6 text-2xl font-bold text-white">Drawers</h1>
               <div className="flex justify-between space-x-2">
                 <Button onClick={() => setLeftDrawer(!leftDrawer)}>
@@ -400,11 +398,11 @@ const Home: NextPage = () => {
                 </Button>
               </div>
             </div>
-            <div className="w-full rounded bg-emerald-500/20 p-6 shadow-lg">
+            <div className="w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20">
               <h1 className="pb-6 text-2xl font-bold text-white">Alerts</h1>
               <Button onClick={() => setAlerts(!alerts)}>Open Alerts</Button>
             </div>
-            <div className="w-full rounded bg-emerald-500/20 p-6 shadow-lg">
+            <div className="w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20">
               <h1 className="pb-6 text-2xl font-bold text-white">Modals</h1>
               <div className="flex justify-between space-x-2">
                 <Button onClick={() => setModal(!modal)}> Open Modal</Button>
@@ -422,7 +420,7 @@ const Home: NextPage = () => {
                 </InfoButton>
               </div>
             </div>
-            <div className="w-full rounded bg-emerald-500/20 p-6 shadow-lg">
+            <div className="w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20">
               <h1 className="pb-6 text-2xl font-bold text-white">Progress</h1>
               <div className="space-y-2">
                 <Progress
@@ -437,7 +435,7 @@ const Home: NextPage = () => {
                 <InfoProgress progress={infoProgress} />
               </div>
             </div>
-            <div className="w-full rounded bg-emerald-500/20 p-6 shadow-lg">
+            <div className="w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20">
               <h1 className="pb-6 text-2xl font-bold text-white">Tabs</h1>
               <Tabs
                 SelectedButton={InfoButton}
@@ -477,6 +475,12 @@ const Home: NextPage = () => {
                   },
                 ]}
               />
+            </div>
+            <div className="w-full rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20">
+              <h1 className="pb-6 text-2xl font-bold text-white">
+                Code Snippet
+              </h1>
+              <CodeSnippet data="npm i @nextail/core @nextail/providers" />
             </div>
           </div>
         </div>
