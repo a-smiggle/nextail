@@ -9,7 +9,7 @@ const ImageCardSkeleton = (props: SkeletonProps) => (
       props.cardStylings ? props.cardStylings : { spacing: { padding: ' ' } }
     }
   >
-    <div className="h-48 w-96 animate-pulse overflow-hidden rounded-t-lg bg-gray-200" />
+    <div className="h-48 w-full animate-pulse overflow-hidden rounded-t-lg bg-gray-200" />
     <div className="flex flex-1 flex-col gap-3 px-4 py-6">
       <div className="h-8 w-1/2 animate-pulse rounded-md bg-gray-200" />
       <div className="h-3 w-full animate-pulse rounded-md bg-gray-200" />
@@ -45,7 +45,7 @@ const ImageBottomCardSkeleton = (props: SkeletonProps) => (
       <div className="h-3 w-full animate-pulse rounded-md bg-gray-200" />
       <div className="h-3 w-full animate-pulse rounded-md bg-gray-200" />
     </div>
-    <div className="h-48 w-96 animate-pulse overflow-hidden rounded-b-lg bg-gray-200" />
+    <div className="h-48 w-full animate-pulse overflow-hidden rounded-b-lg bg-gray-200" />
   </Card>
 );
 
@@ -63,7 +63,7 @@ const ImageLeftCardSkeleton = (props: SkeletonProps) => (
   >
     <div className="h-36 w-full animate-pulse rounded-t-lg bg-gray-200 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" />
 
-    <div className="flex w-96 flex-1 flex-col gap-3 px-4 py-6">
+    <div className="flex w-full flex-1 flex-col gap-3 px-4 py-6">
       <div className="h-8 w-1/2 animate-pulse rounded-md bg-gray-200" />
       <div className="h-3 w-full animate-pulse rounded-md bg-gray-200" />
       <div className="h-3 w-full animate-pulse rounded-md bg-gray-200" />
@@ -89,7 +89,7 @@ const ImageRightCardSkelton = (props: SkeletonProps) => (
           }
     }
   >
-    <div className="flex w-96 flex-1 flex-col gap-3 px-4 py-6">
+    <div className="flex w-full flex-1 flex-col gap-3 px-4 py-6">
       <div className="h-8 w-1/2 animate-pulse rounded-md bg-gray-200" />
       <div className="h-3 w-full animate-pulse rounded-md bg-gray-200" />
       <div className="h-3 w-full animate-pulse rounded-md bg-gray-200" />
