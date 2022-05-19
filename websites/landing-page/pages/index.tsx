@@ -22,19 +22,19 @@ const Home: NextPage = () => {
           className="h-full w-full bg-white bg-cover bg-no-repeat dark:bg-emerald-900"
           style={{ backgroundImage: 'url(/EmeraldDivider.svg)' }}
         >
-          <div className="w-full pt-6 text-center md:pt-24">
-            <div className="w-full flex-col justify-center rounded shadow-lg dark:bg-emerald-500/30 md:p-6">
-              <h1 className="text-center text-6xl font-bold text-white md:text-4xl">
+          <div className="h-screen w-full">
+            <div className="flex h-screen flex-col items-center justify-center">
+              <h1 className="text-center text-5xl font-bold text-white md:text-7xl">
                 Easy to use.
               </h1>
-              <h1 className="text-6xl font-bold text-white md:text-4xl">
+              <h1 className="text-center  text-5xl font-bold text-white md:text-7xl">
                 Easy to configure.
               </h1>
-              <h1 className="text-6xl font-bold text-white md:text-4xl">
+              <h1 className="text-center  text-5xl font-bold text-white md:text-7xl">
                 Easy to customise.
               </h1>
               <br></br>
-              <p className="pt-6 text-2xl font-medium text-white md:text-lg">
+              <p className="pt-6 text-center text-xl font-medium text-white md:text-lg">
                 A collection of React components built with TailwindCSS. Styled
                 and semistyled options ready to be customised.
               </p>
@@ -137,7 +137,7 @@ export default ButtonPage;
                 <WarningOutlineButton>Warning</WarningOutlineButton>
               </div>
             </div>
-            <div className="col-span-1 w-screen rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20 md:col-span-1 md:w-full">
+            <div className="col-span-1 mb-4 w-screen rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20 md:col-span-1 md:mb-0 md:w-full">
               <h1 className="pb-2 text-4xl font-bold text-white md:text-2xl">
                 Customise
               </h1>
