@@ -10,7 +10,10 @@ function Layout({ children }) {
   return (
     <div className="flex h-screen w-screen flex-col overflow-x-hidden">
       <NavbarV1
-        mainStylings={{ background: { backgroundColor: 'bg-emerald-500' } }}
+        mainStylings={{
+          background: { backgroundColor: 'bg-emerald-500' },
+          layout: { zIndex: 'z-20', position: 'sticky', top: 'top-0' },
+        }}
         data={{
           title: (
             <div className="text-lg font-bold uppercase text-white">
@@ -113,7 +116,7 @@ function Layout({ children }) {
           text: { textColor: 'dark:text-white hover:text-white' },
         }}
       />
-      <main className="grow">{children}</main>
+      <main className="static grow">{children}</main>
       <Footer
         mainStylings={{
           background: {
