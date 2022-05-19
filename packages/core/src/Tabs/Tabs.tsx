@@ -10,7 +10,7 @@ function Tabs(props: TabsProps) {
 
   return (
     <>
-      <div id="tab-buttons" className="flex-col flex-wrap md:flex-row">
+      <div id="tab-buttons" className="flex overflow-auto">
         {props.data.map((item, index) => {
           if (index === selected)
             return (
