@@ -1,5 +1,4 @@
-<!-- markdownlint-disable-next-line -->
-<h1 class="color:#10b981;" align="center">Nextail</h1>
+# Nextail
 
 **Nextail** focuses on being **Easy to USE**, **Easy to CONFIGURE** and **Easy to CUSTOMISE**.
 Providing React Components that are styled with TailwindCSS.
@@ -10,6 +9,8 @@ Usage and examples focus on using Nextail with Next.JS.
 # Packages
 ## Nextail Core
 [![npm](https://img.shields.io/npm/v/@nextail/core)](https://www.npmjs.com/package/@nextail/core)
+[![npm downloads](https://img.shields.io/npm/dw/@nextail/core)](https://www.npmjs.com/package/@nextail/core)
+
 Nextail Core provides a collection of ready to use React Components.
 ### Installation
 Nextail Core is available as an [npm package](https://www.npmjs.com/package/@nextail/core).
@@ -26,6 +27,8 @@ yarn add @nextail/core
 ```
 ## Nextail Providers
 [![npm](https://img.shields.io/npm/v/@nextail/providers)](https://www.npmjs.com/package/@nextail/providers)
+[![npm downloads](https://img.shields.io/npm/dw/@nextail/providers)](https://www.npmjs.com/package/@nextail/providers)
+
 Nextail Provides is a collection of react hooks and context providers. **More to come.**
 ### Installation
 Nextail Providers is available as an [npm package](https://www.npmjs.com/package/@nextail/providers).
