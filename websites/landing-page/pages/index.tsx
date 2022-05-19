@@ -36,7 +36,7 @@ const Home: NextPage = () => {
               <br></br>
               <p className="pt-6 text-center text-xl font-medium text-white md:text-lg">
                 A collection of React components built with TailwindCSS. Styled
-                and semistyled options ready to be customised.
+                and semi-styled options ready to be customised.
               </p>
             </div>
           </div>
@@ -142,7 +142,7 @@ export default ButtonPage;
                 Customise
               </h1>
               <p className="text-lg font-medium text-black">
-                Easily edit individual class variables or overide with complete
+                Easily edit individual class variables or override with complete
                 control.
               </p>
               <CodeSnippet

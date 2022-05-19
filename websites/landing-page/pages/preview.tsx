@@ -373,7 +373,7 @@ const Home: NextPage = () => {
               <Button onClick={() => setAlerts(!alerts)}>Open Alerts</Button>
             </div>
             <div className="col-span-1 w-screen rounded bg-emerald-500/50 p-6 shadow-lg dark:bg-emerald-500/20 md:col-span-2 md:row-span-2 md:w-full">
-              <h1 className="pb-6 text-2xl font-bold text-white">Skeltons</h1>
+              <h1 className="pb-6 text-2xl font-bold text-white">Skeletons</h1>
               <div className="grid gap-2 md:grid-cols-2">
                 <ImageLeftCardSkeleton />
                 <div className="md:row-span-2">
