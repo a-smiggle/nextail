@@ -72,7 +72,7 @@ export default function Modal(
 
   return (
     <div
-      className={`${props.open ? '' : 'hidden'} ${
+      className={`${props.open ? 'z-50' : 'hidden'} ${
         props.backdropStylings?.className
           ? props.backdropStylings.className
           : createStylings(backdropStylings)
