@@ -52,11 +52,11 @@ export default function AlertContainer(
       : 'top-0';
     mainStylings.layout.right = props.mainStylings?.layout?.left
       ? props.mainStylings.layout?.right
-      : 'right-10';
+      : 'right-0 md:right-10';
     if (!mainStylings.sizing) mainStylings.sizing = {};
     mainStylings.sizing.width = props.mainStylings?.sizing?.width
       ? props.mainStylings.sizing.width
-      : 'w-full';
+      : 'w-4/5 md:w-full';
     mainStylings.sizing.height = props.mainStylings?.sizing?.height
       ? props.mainStylings.sizing.height
       : 'h-screen';
