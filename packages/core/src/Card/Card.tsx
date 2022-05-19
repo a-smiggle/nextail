@@ -13,9 +13,12 @@ export default function Card(
       ? props.mainStylings.spacing.padding
       : 'p-6';
     if (!mainStylings.sizing) mainStylings.sizing = {};
-    mainStylings.sizing.maxWidth = props.mainStylings?.sizing?.maxWidth
-      ? props.mainStylings.sizing.maxWidth
-      : 'max-w-sm';
+    mainStylings.sizing.width = props.mainStylings?.sizing?.width
+      ? props.mainStylings.sizing.width
+      : 'w-full';
+    mainStylings.sizing.height = props.mainStylings?.sizing?.height
+      ? props.mainStylings.sizing.height
+      : 'h-fit';
     if (!mainStylings.effect) mainStylings.effect = {};
     mainStylings.effect.boxShadow = props.mainStylings?.effect?.boxShadow
       ? props.mainStylings.effect.boxShadow
@@ -24,7 +27,6 @@ export default function Card(
     mainStylings.text.textColor = props.mainStylings?.text?.textColor
       ? props.mainStylings.text.textColor
       : 'text-black dark:text-slate-300';
-
     if (!mainStylings.background) mainStylings.background = {};
     mainStylings.background.backgroundColor = props.mainStylings?.background
       ?.backgroundColor

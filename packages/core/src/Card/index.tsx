@@ -23,13 +23,12 @@ const SimpleCard = (props: CardData) => (
 
 const ImageCard = (props: CardData) => (
   <Card mainStylings={{ spacing: { padding: ' ' } }}>
-    <a href={props.imageLink ? props.imageLink : '#!'}>
-      <img
-        className="h-48 w-full rounded-t-lg object-cover"
-        src={props.image ? props.image : 'https://api.lorem.space/image'}
-        alt=""
-      />
-    </a>
+    <img
+      className="h-64 w-full rounded-t-lg object-cover"
+      src={props.image ? props.image : 'https://api.lorem.space/image'}
+      alt=""
+    />
+
     <div className="px-4 pb-2 pt-6">
       <h5 className="mb-2 text-xl font-medium text-gray-900 dark:text-white">
         {props.title ? props.title : 'Title Here'}
@@ -61,7 +60,7 @@ const ImageBottomCard = (props: CardData) => (
     </div>
     <a href={props.imageLink ? props.imageLink : '#!'}>
       <img
-        className=" h-48 w-full rounded-b-lg object-cover"
+        className="h-64 w-full rounded-b-lg object-cover"
         src={props.image ? props.image : 'https://api.lorem.space/image'}
         alt=""
       />
@@ -72,13 +71,13 @@ const ImageBottomCard = (props: CardData) => (
 const ImageLeftCard = (props: CardData) => (
   <Card
     mainStylings={{
-      layout: { display: 'flex flex-col md:flex-row ' },
-      sizing: { maxWidth: 'md:max-w-xl' },
+      layout: { display: 'flex flex-col md:flex-row' },
+      sizing: { maxWidth: ' ' },
       spacing: { padding: ' ' },
     }}
   >
     <img
-      className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+      className="h-64 w-full rounded-t-lg object-cover md:h-auto md:w-1/3 md:rounded-none md:rounded-l-lg"
       src={props.image ? props.image : 'https://api.lorem.space/image/book'}
       alt=""
     />
@@ -101,7 +100,7 @@ const ImageRightCard = (props: CardData) => (
   <Card
     mainStylings={{
       layout: { display: 'flex flex-col md:flex-row ' },
-      sizing: { maxWidth: 'md:max-w-xl' },
+      sizing: { maxWidth: ' ' },
       spacing: { padding: ' ' },
     }}
   >
@@ -118,7 +117,7 @@ const ImageRightCard = (props: CardData) => (
       {props.button ? props.button : null}
     </div>
     <img
-      className="h-96 w-full rounded-b-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-r-lg"
+      className="h-64 w-full rounded-b-lg object-cover  md:h-auto md:w-1/3 md:rounded-none md:rounded-r-lg"
       src={props.image ? props.image : 'https://api.lorem.space/image/book'}
       alt=""
     />
