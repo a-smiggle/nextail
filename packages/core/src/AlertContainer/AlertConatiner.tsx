@@ -81,7 +81,7 @@ export default function AlertContainer(
             props.backgroundStylings?.className
               ? props.backgroundStylings.className
               : createStylings(backgroundStylings)
-          } ${props.open ? '' : 'hidden'}`}
+          } ${props.open ? 'z-50' : 'hidden'}`}
         />
       ) : null}
       <div
@@ -90,7 +90,7 @@ export default function AlertContainer(
           props.mainStylings?.className
             ? props.mainStylings.className
             : createStylings(mainStylings)
-        } ${props.open ? '' : 'hidden'}`}
+        } ${props.open ? 'z-50' : 'hidden'}`}
       >
         {props.children}
       </div>
