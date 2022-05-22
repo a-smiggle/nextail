@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { useOnClickOutside } from 'usehooks-ts';
 
-import Accordion from '../Accordion';
 import Button from '../Button';
+import { SidebarV1 } from '../Sidebar';
 import createStylings from '../stylings';
 import NavbarDropdown from './NavbarDropdown';
 import { NavbarProps } from './types';
@@ -47,39 +48,13 @@ function Navbar(props: NavbarProps) {
       : 'items-center';
   }
 
-  const mobileStylings = props.mobileStylings ? props.mobileStylings : {};
-  if (mobileStylings) {
-    if (!mobileStylings.layout) mobileStylings.layout = {};
-    mobileStylings.layout.display = props.mobileStylings?.layout?.display
-      ? props.mobileStylings.layout.display
-      : 'flex';
-    if (!mobileStylings.sizing) mobileStylings.sizing = {};
-    mobileStylings.sizing.width = props.mobileStylings?.sizing?.width
-      ? props.mobileStylings.sizing.width
-      : 'w-full';
-    if (!mobileStylings.background) mobileStylings.background = {};
-    mobileStylings.background.backgroundColor = props.mobileStylings?.background
-      ?.backgroundColor
-      ? props.mobileStylings.background.backgroundColor
-      : 'bg-white dark:bg-gray-800';
-    if (!mobileStylings.spacing) mobileStylings.spacing = {};
-    mobileStylings.spacing.padding = props.mobileStylings?.spacing?.padding
-      ? props.mobileStylings.spacing.padding
-      : 'p-4';
-    if (!mobileStylings.effect) mobileStylings.effect = {};
-    mobileStylings.effect.boxShadow = props.mobileStylings?.effect?.boxShadow
-      ? props.mobileStylings.effect.boxShadow
-      : 'shadow-lg';
-    if (!mobileStylings.flexboxGrid) mobileStylings.flexboxGrid = {};
-    mobileStylings.flexboxGrid.flexDirection = props.mobileStylings?.flexboxGrid
-      ?.flexDirection
-      ? props.mobileStylings.flexboxGrid.flexDirection
-      : 'flex-col';
-    mobileStylings.flexboxGrid.alignItems = props.mobileStylings?.flexboxGrid
-      ?.alignItems
-      ? props.mobileStylings.flexboxGrid.alignItems
-      : 'items-center';
-  }
+  const ref = useRef(null);
+
+  const handleOutsideClick = () => {
+    setOpen(false);
+  };
+
+  useOnClickOutside(ref, handleOutsideClick);
 
   return (
     <>
@@ -112,8 +87,7 @@ function Navbar(props: NavbarProps) {
               </svg>
             </Button>
           </div>
-          {props.data?.logo}
-          {props.data?.title}
+          {props.data?.brand}
         </div>
 
         <div className="flex items-center justify-between">
@@ -148,52 +122,15 @@ function Navbar(props: NavbarProps) {
         </div>
       </nav>
       <div
-        className={`${open ? '' : 'hidden'} h-screen  ${createStylings(
-          mobileStylings
-        )}`}
+        ref={ref}
+        className={`${open ? 'h-screen absolute z-50' : 'hidden'}`}
       >
-        {props.data?.menu?.map((data, index) => {
-          if (data && data.subMenu && data.subMenu?.length > 0) {
-            return (
-              <div key={index}>
-                <Accordion
-                  flush
-                  titleStylings={{
-                    border: { borderWidth: ' ' },
-                    spacing: { padding: ' ' },
-                  }}
-                  childStylings={{
-                    border: { borderWidth: ' ' },
-                    spacing: { padding: ' ' },
-                  }}
-                  data={[
-                    {
-                      title: data.title,
-                      content: (
-                        <div className="flex flex-col items-center">
-                          {data.subMenu.map((sub, subIndex) => (
-                            <Button
-                              key={subIndex}
-                              link={sub.link}
-                              mainStylings={{ className: ' ' }}
-                            >
-                              {sub.title}
-                            </Button>
-                          ))}
-                        </div>
-                      ),
-                    },
-                  ]}
-                />
-              </div>
-            );
-          }
-          return (
-            <a key={index} href={data.link}>
-              <span>{data.title}</span>
-            </a>
-          );
-        })}
+        <SidebarV1
+          data={props.sidebar.data}
+          mainStylings={props.sidebar.mainStylings}
+          menuStylings={props.sidebar.menuStylings}
+          menuActiveStylings={props.sidebar.menuActiveStylings}
+        />
       </div>
     </>
   );

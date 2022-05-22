@@ -1,16 +1,10 @@
 import { ReactNode } from 'react';
 
-import { TailwindStylings } from '../types';
-
-export interface MenuData {
-  title: string;
-  link?: string;
-  subMenu?: MenuData[];
-}
+import { SidebarProps } from '../Sidebar/types';
+import { MenuData, TailwindStylings } from '../types';
 
 export interface NavbarData {
-  title?: ReactNode;
-  logo?: ReactNode;
+  brand?: ReactNode;
   menu?: MenuData[];
   buttons?: ReactNode;
 }
@@ -18,8 +12,8 @@ export interface NavbarData {
 export interface NavbarProps {
   data: NavbarData;
   mainStylings?: TailwindStylings;
-  mobileStylings?: TailwindStylings;
   linkStylings?: TailwindStylings;
   dropdownStylings?: TailwindStylings;
   dropdownItemStylings?: TailwindStylings;
+  sidebar?: SidebarProps;
 }

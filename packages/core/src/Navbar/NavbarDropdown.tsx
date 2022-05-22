@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 
 import Button from '../Button';
 import Dropdown from '../Dropdown';
-import { TailwindStylings } from '../types';
-import { MenuData } from './types';
+import { MenuData, TailwindStylings } from '../types';
 
 interface CustomProps {
   data: MenuData;

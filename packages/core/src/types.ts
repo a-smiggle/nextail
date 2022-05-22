@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type LayoutStylings = {
   aspectRatio?: string;
   conatiner?: string;
@@ -374,3 +376,10 @@ export type TailwindStylings = {
   svg?: SvgStylings;
   accessibility?: AccessibilityStylings;
 };
+
+export interface MenuData {
+  icon?: ReactNode;
+  title: string;
+  link?: string;
+  subMenu?: MenuData[];
+}
