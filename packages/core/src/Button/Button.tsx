@@ -44,16 +44,31 @@ function Button(props: PropsWithChildren<ButtonProps>): ReactElement {
       : 'shadow-md';
   }
 
+  if (props.disabled)
+    return (
+      <button
+        disabled={props.disabled}
+        type={props.type ? props.type : 'button'}
+        className={`${
+          props.mainStylings?.className
+            ? props.mainStylings.className
+            : createStylings(mainStylings)
+        } ${props.disabled ? 'pointer-events-none opacity-50' : ''}`}
+      >
+        {props.children}
+      </button>
+    );
+
   if (props.link)
     return (
       <a href={props.link}>
         <button
           type={props.type ? props.type : 'button'}
-          className={`${
+          className={
             props.mainStylings?.className
               ? props.mainStylings.className
               : createStylings(mainStylings)
-          } ${props.disabled ? 'pointer-events-none opacity-50' : ''}`}
+          }
         >
           {props.children}
         </button>
@@ -65,11 +80,11 @@ function Button(props: PropsWithChildren<ButtonProps>): ReactElement {
       <button
         type={props.type ? props.type : 'button'}
         onClick={props.onClick}
-        className={`${
+        className={
           props.mainStylings?.className
             ? props.mainStylings.className
             : createStylings(mainStylings)
-        } ${props.disabled ? 'pointer-events-none opacity-50' : ''}`}
+        }
       >
         {props.children}
       </button>
@@ -78,11 +93,11 @@ function Button(props: PropsWithChildren<ButtonProps>): ReactElement {
   return (
     <button
       type={props.type ? props.type : 'button'}
-      className={`${
+      className={
         props.mainStylings?.className
           ? props.mainStylings.className
           : createStylings(mainStylings)
-      } ${props.disabled ? 'pointer-events-none opacity-50' : ''}`}
+      }
     >
       {props.children}
     </button>
