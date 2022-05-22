@@ -15,7 +15,7 @@ function Layout({ children }) {
           layout: { zIndex: 'z-20', position: 'sticky', top: 'top-0' },
         }}
         data={{
-          title: (
+          brand: (
             <div className="text-lg font-bold uppercase text-white">
               Nextail
             </div>
@@ -114,6 +114,24 @@ function Layout({ children }) {
         dropdownItemStylings={{
           background: { backgroundColor: 'hover:bg-emerald-500' },
           text: { textColor: 'dark:text-white hover:text-white' },
+        }}
+        sidebar={{
+          data: {
+            brand: (
+              <div className="text-3xl font-bold uppercase text-emerald-500">
+                Nextail
+              </div>
+            ),
+            menu: [
+              { title: 'Home', link: '/' },
+              { title: 'About', link: '/about' },
+              {
+                title: 'Preview',
+                link: '/preview',
+              },
+              { title: 'Docs', link: 'https://nextail-docs.vercel.app' },
+            ],
+          },
         }}
       />
       <main className="static grow">{children}</main>
