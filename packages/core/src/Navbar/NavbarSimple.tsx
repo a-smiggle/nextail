@@ -2,10 +2,9 @@ import React from 'react';
 
 import Button from '../Button';
 import createStylings from '../stylings';
-import NavbarDropdown from './NavbarDropdown';
 import { NavbarProps } from './types';
 
-function Navbar(props: NavbarProps) {
+function NavbarSimple(props: NavbarProps) {
   const mainStylings = props.mainStylings ? props.mainStylings : {};
   if (mainStylings) {
     if (!mainStylings.layout) mainStylings.layout = {};
@@ -62,7 +61,7 @@ function Navbar(props: NavbarProps) {
       >
         <div className="flex items-center">
           {props.toggle && props.open !== undefined ? (
-            <div className="flex md:hidden">
+            <div className="flex">
               <Button
                 mainStylings={{ className: ' ' }}
                 onClick={() => handleToggle()}
@@ -84,37 +83,9 @@ function Navbar(props: NavbarProps) {
               </Button>
             </div>
           ) : null}
-          {props.data?.brand}
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div className="hidden md:flex md:items-center md:justify-between">
-            {props.data?.menu?.map((data, index) => {
-              if (data && data.subMenu && data.subMenu?.length > 0) {
-                return (
-                  <NavbarDropdown
-                    key={index}
-                    data={data}
-                    dropdownStylings={props.dropdownStylings}
-                    dropdownItemStylings={props.dropdownItemStylings}
-                    linkStylings={props.linkStylings}
-                  />
-                );
-              }
-
-              return (
-                <Button
-                  key={index}
-                  link={data.link}
-                  mainStylings={props.linkStylings}
-                >
-                  {data.title}
-                </Button>
-              );
-            })}
-          </div>
+          {props.open ? null : props.data?.brand}
           <div className="flex items-center justify-between">
-            {props.data.buttons}
+            {props.data?.buttons}
           </div>
         </div>
       </nav>
@@ -122,4 +93,4 @@ function Navbar(props: NavbarProps) {
   );
 }
 
-export default Navbar;
+export default NavbarSimple;
