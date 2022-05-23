@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
 
 import { MenuData, TailwindStylings } from '../types';
 
@@ -25,4 +25,6 @@ export interface SidebarProps {
   mainStylings?: TailwindStylings;
   menuStylings?: TailwindStylings;
   menuActiveStylings?: TailwindStylings;
+  toggle?: Dispatch<SetStateAction<boolean>>;
+  open?: boolean;
 }

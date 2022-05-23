@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useOnClickOutside } from 'usehooks-ts';
 
 import createStylings from '../stylings';
 import SidebarMenu from './SidebarMenu';
@@ -37,8 +38,18 @@ function Sidebar(props: SidebarProps) {
       ? props.mainStylings.effect.boxShadow
       : 'shadow-lg';
   }
+
+  const ref = useRef(null);
+
+  const handleOutsideClick = () => {
+    if (props.toggle) props.toggle(false);
+  };
+
+  useOnClickOutside(ref, handleOutsideClick);
+
   return (
     <div
+      ref={ref}
       className={
         props.mainStylings?.className
           ? props.mainStylings.className
