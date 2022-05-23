@@ -1,6 +1,5 @@
-import { ReactNode } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
 
-import { SidebarProps } from '../Sidebar/types';
 import { MenuData, TailwindStylings } from '../types';
 
 export interface NavbarData {
@@ -15,5 +14,6 @@ export interface NavbarProps {
   linkStylings?: TailwindStylings;
   dropdownStylings?: TailwindStylings;
   dropdownItemStylings?: TailwindStylings;
-  sidebar?: SidebarProps;
+  toggle?: Dispatch<SetStateAction<boolean>>;
+  open?: boolean;
 }

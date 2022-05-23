@@ -1,15 +1,11 @@
-import React, { useRef, useState } from 'react';
-import { useOnClickOutside } from 'usehooks-ts';
+import React from 'react';
 
 import Button from '../Button';
-import { SidebarV1 } from '../Sidebar';
 import createStylings from '../stylings';
 import NavbarDropdown from './NavbarDropdown';
 import { NavbarProps } from './types';
 
 function Navbar(props: NavbarProps) {
-  const [open, setOpen] = useState(false);
-
   const mainStylings = props.mainStylings ? props.mainStylings : {};
   if (mainStylings) {
     if (!mainStylings.layout) mainStylings.layout = {};
@@ -20,6 +16,9 @@ function Navbar(props: NavbarProps) {
     mainStylings.sizing.width = props.mainStylings?.sizing?.width
       ? props.mainStylings.sizing.width
       : 'w-full';
+    mainStylings.sizing.height = props.mainStylings?.sizing?.height
+      ? props.mainStylings.sizing.height
+      : 'h-16';
     if (!mainStylings.background) mainStylings.background = {};
     mainStylings.background.backgroundColor = props.mainStylings?.background
       ?.backgroundColor
@@ -48,13 +47,9 @@ function Navbar(props: NavbarProps) {
       : 'items-center';
   }
 
-  const ref = useRef(null);
-
-  const handleOutsideClick = () => {
-    setOpen(false);
-  };
-
-  useOnClickOutside(ref, handleOutsideClick);
+  function handleToggle() {
+    if (props.toggle) props.toggle(!props.open);
+  }
 
   return (
     <>
@@ -66,27 +61,29 @@ function Navbar(props: NavbarProps) {
         }
       >
         <div className="flex items-center">
-          <div className="flex md:hidden">
-            <Button
-              mainStylings={{ className: ' ' }}
-              onClick={() => setOpen(!open)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className={`h-6 w-6 mr-6 ${props.linkStylings}`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
+          {props.toggle ? (
+            <div className="flex md:hidden">
+              <Button
+                mainStylings={{ className: ' ' }}
+                onClick={() => handleToggle()}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </Button>
-          </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`h-6 w-6 mr-6 ${props.linkStylings}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </Button>
+            </div>
+          ) : null}
           {props.data?.brand}
         </div>
 
@@ -121,17 +118,6 @@ function Navbar(props: NavbarProps) {
           </div>
         </div>
       </nav>
-      <div
-        ref={ref}
-        className={`${open ? 'h-screen absolute z-50' : 'hidden'}`}
-      >
-        <SidebarV1
-          data={props.sidebar.data}
-          mainStylings={props.sidebar.mainStylings}
-          menuStylings={props.sidebar.menuStylings}
-          menuActiveStylings={props.sidebar.menuActiveStylings}
-        />
-      </div>
     </>
   );
 }
