@@ -62,3 +62,62 @@ const Home: NextPage = () => {
 
 export default Home;
 ```
+
+### Layout Provider
+Here is the app.tsx file of a Next.js project.
+```tsx
+import '../styles/globals.css';
+
+import LayoutProvider from '@nextail/providers/LayoutProvider';
+import type { AppProps } from 'next/app';
+import React from 'react';
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <LayoutProvider>
+      <Component {...pageProps} />
+    </LayoutProvider>
+  );
+}
+
+export default MyApp;
+```
+
+Example to use the theme context in a Next.Js page.
+
+```tsx
+import type { NextPage } from 'next';
+import React from 'react';
+
+import { SidebarV1 } from '@nextail/core/Sidebar';
+import Button from '@nextail/core/Button';
+import { useLayoutContext } from '@nextail/providers/LayoutProvider';
+
+const Home: NextPage = () => {
+  const { sidebarOpen, setSidebarOpen } = useLayoutContext();
+
+  return (
+    <>
+      <div className='w-full h-screen bg-white dark:bg-slate-300'>
+        <Button onClick={() => setSidebarOpen(!sidebar)}>Toggle Sidebar</Button>
+        
+      </div>
+      <div className={`${sidebarOpen ? 'absolute top-0 left-0 ' : 'hidden'}`}>
+          <SidebarV1
+            data={{
+              brand: (
+                <div className="text-3xl font-bold uppercase text-emerald-500">
+                  Nextail
+                </div>
+              ),
+              bottom: <Button onClick={() => setSidebarOpen(!sidebar)}>Toggle Sidebar</Button>
+            }}
+            bottom: 
+          />
+        </div>
+      </>
+    );
+};
+
+export default Home;
+```
