@@ -1,3 +1,1 @@
-import useLocation from './UseLocation';
-
-export { useLocation };
+export * from './Window';
