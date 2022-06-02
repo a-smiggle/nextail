@@ -19,8 +19,8 @@ import {
 
 const createLayout = (layout: LayoutStylings): string =>
   `${layout.aspectRatio ? layout.aspectRatio : ''} ${
-    layout.conatiner ? layout.conatiner : ''
-  } ${layout.comlumns ? layout.comlumns : ''} ${
+    layout.container ? layout.container : ''
+  } ${layout.columns ? layout.columns : ''} ${
     layout.breakAfter ? layout.breakAfter : ''
   } ${layout.breakBefore ? layout.breakBefore : ''} ${
     layout.breakInside ? layout.breakInside : ''
@@ -233,7 +233,7 @@ const createInteractivity = (interactivity: InteractivityStylings): string =>
   } ${interactivity.scrollPadding ? interactivity.scrollPadding : ''} ${
     interactivity.scrollSnapAlign ? interactivity.scrollSnapAlign : ''
   } ${interactivity.scrollSnapStop ? interactivity.scrollSnapStop : ''} ${
-    interactivity.scrollSnapexportType ? interactivity.scrollSnapexportType : ''
+    interactivity.scrollSnapExportType ? interactivity.scrollSnapExportType : ''
   } ${interactivity.touchAction ? interactivity.touchAction : ''} ${
     interactivity.userSelect ? interactivity.userSelect : ''
   } ${interactivity.willChange ? interactivity.willChange : ''}`;

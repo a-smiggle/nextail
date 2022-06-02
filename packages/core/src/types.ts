@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 
 export type LayoutStylings = {
-  aspectRatio?: string;
-  conatiner?: string;
-  comlumns?: string;
+  aspectRatio?: string | 'aspect-auto' | 'aspect-square' | 'aspect-video';
+  container?: string;
+  columns?: string;
   breakAfter?:
     | string
     | 'break-after-auto'
@@ -342,7 +342,7 @@ export type InteractivityStylings = {
   scrollPadding?: string;
   scrollSnapAlign?: string;
   scrollSnapStop?: string;
-  scrollSnapexportType?: string;
+  scrollSnapExportType?: string;
   touchAction?: string;
   userSelect?: string;
   willChange?: string;
