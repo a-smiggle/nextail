@@ -1,6 +1,6 @@
 {
   "name": "@nextail/providers",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "private": false,
   "author": "a-smiggle",
@@ -18,6 +18,9 @@
     "compile": "tsc -p tsconfig.build.json",
     "build-types": "tsc --noEmit --pretty",
     "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@nextail/hooks": "*"
   },
   "peerDependencies": {
     "react": "~18.0.0",

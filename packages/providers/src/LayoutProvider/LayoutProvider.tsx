@@ -1,8 +1,9 @@
 /* eslint-disable object-shorthand */
+import { useInnerWidth } from '@nextail/hooks';
 import React, {
   createContext,
   Dispatch,
-  ReactNode,
+  PropsWithChildren,
   SetStateAction,
   useContext,
   useEffect,
@@ -10,7 +11,7 @@ import React, {
 } from 'react';
 
 type CustomProps = {
-  children: ReactNode;
+  sidebarDefault?: boolean;
 };
 
 type LayoutValue = {
@@ -33,13 +34,15 @@ type LayoutValue = {
 
 const LayoutContext = createContext<LayoutValue | undefined>(undefined);
 
-export default function LayoutProvider(props: CustomProps) {
+export default function LayoutProvider(props: PropsWithChildren<CustomProps>) {
   const [loading, setLoading] = useState(true);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(props.sidebarDefault || false);
   const [leftDrawerOpen, setLeftDrawerOpen] = useState(false);
   const [rightDrawerOpen, setRightDrawerOpen] = useState(false);
   const [topDrawerOpen, setTopDrawerOpen] = useState(false);
   const [bottomDrawerOpen, setBottomDrawerOpen] = useState(false);
+
+  const width = useInnerWidth();
 
   const toggleSidebarOpen = () => {
     setSidebarOpen(!sidebarOpen);
@@ -66,7 +69,8 @@ export default function LayoutProvider(props: CustomProps) {
     if (temp) {
       const storedLayout = JSON.parse(temp);
       if (storedLayout) {
-        const tempSidebarOpen: boolean = storedLayout.sidebarOpen || false;
+        const tempSidebarOpen: boolean =
+          width <= 425 ? false : storedLayout.sidebarOpen || false;
         setSidebarOpen(tempSidebarOpen);
         const tempLeftDrawerOpen: boolean =
           storedLayout.leftDrawerOpen || false;
