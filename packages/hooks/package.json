@@ -1,6 +1,6 @@
 {
   "name": "@nextail/hooks",
-  "version": "0.55.0",
+  "version": "0.55.1",
   "license": "MIT",
   "private": false,
   "author": "a-smiggle",
@@ -10,7 +10,6 @@
     "directory": "packages/hooks"
   },
   "main": "lib/index",
-  "types": "lib/index",
   "files": [
     "/lib"
   ],
