@@ -19,7 +19,10 @@ importers:
       eslint-plugin-simple-import-sort: ^7.0.0
       eslint-plugin-tailwindcss: ^3.5.0
       eslint-plugin-unused-imports: ^2.0.0
+      next: ~12.1.0
       prettier: ^2.6.2
+      react: ~18.0.0
+      react-dom: ~18.0.0
       rimraf: ^3.0.2
       typescript: ~4.6.0
     devDependencies:
@@ -28,7 +31,7 @@ importers:
       eslint: 8.16.0
       eslint-config-airbnb-base: 15.0.0_0ce4f552c18297c00de8a172104cf37a
       eslint-config-airbnb-typescript: 17.0.0_23dd4a58d34b09d74b3427b661b9aaeb
-      eslint-config-next: 12.1.6_eslint@8.16.0+typescript@4.6.4
+      eslint-config-next: 12.1.6_cd70e4a5d949413954ff8ae18b07cb61
       eslint-config-prettier: 8.5.0_eslint@8.16.0
       eslint-plugin-import: 2.26.0_eslint@8.16.0
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.16.0
@@ -38,7 +41,10 @@ importers:
       eslint-plugin-simple-import-sort: 7.0.0_eslint@8.16.0
       eslint-plugin-tailwindcss: 3.5.0
       eslint-plugin-unused-imports: 2.0.0_ca5ab1e5b858d229237da86dd1545ae8
+      next: 12.1.6_react-dom@18.0.0+react@18.0.0
       prettier: 2.6.2
+      react: 18.0.0
+      react-dom: 18.0.0_react@18.0.0
       rimraf: 3.0.2
       typescript: 4.6.4
 
@@ -231,7 +237,6 @@ packages:
 
   /@next/env/12.1.6:
     resolution: {integrity: sha512-Te/OBDXFSodPU6jlXYPAXpmZr/AkG6DCATAxttQxqOWaq6eDFX25Db3dK0120GZrSZmv4QCe9KsZmJKDbWs4OA==}
-    dev: false
 
   /@next/eslint-plugin-next/12.1.6:
     resolution: {integrity: sha512-yNUtJ90NEiYFT6TJnNyofKMPYqirKDwpahcbxBgSIuABwYOdkGwzos1ZkYD51Qf0diYwpQZBeVqElTk7Q2WNqw==}
@@ -244,7 +249,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm]
     os: [android]
-    dev: false
     optional: true
 
   /@next/swc-android-arm64/12.1.6:
@@ -252,7 +256,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [android]
-    dev: false
     optional: true
 
   /@next/swc-darwin-arm64/12.1.6:
@@ -260,7 +263,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
-    dev: false
     optional: true
 
   /@next/swc-darwin-x64/12.1.6:
@@ -268,7 +270,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
-    dev: false
     optional: true
 
   /@next/swc-linux-arm-gnueabihf/12.1.6:
@@ -276,7 +277,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm]
     os: [linux]
-    dev: false
     optional: true
 
   /@next/swc-linux-arm64-gnu/12.1.6:
@@ -284,7 +284,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
-    dev: false
     optional: true
 
   /@next/swc-linux-arm64-musl/12.1.6:
@@ -292,7 +291,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
-    dev: false
     optional: true
 
   /@next/swc-linux-x64-gnu/12.1.6:
@@ -300,7 +298,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
-    dev: false
     optional: true
 
   /@next/swc-linux-x64-musl/12.1.6:
@@ -308,7 +305,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
-    dev: false
     optional: true
 
   /@next/swc-win32-arm64-msvc/12.1.6:
@@ -316,7 +312,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
-    dev: false
     optional: true
 
   /@next/swc-win32-ia32-msvc/12.1.6:
@@ -324,7 +319,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [ia32]
     os: [win32]
-    dev: false
     optional: true
 
   /@next/swc-win32-x64-msvc/12.1.6:
@@ -332,7 +326,6 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
-    dev: false
     optional: true
 
   /@nodelib/fs.scandir/2.1.5:
@@ -1115,7 +1108,7 @@ packages:
       eslint-plugin-import: 2.26.0_eslint@8.16.0
     dev: true
 
-  /eslint-config-next/12.1.6_eslint@8.16.0+typescript@4.6.4:
+  /eslint-config-next/12.1.6_cd70e4a5d949413954ff8ae18b07cb61:
     resolution: {integrity: sha512-qoiS3g/EPzfCTkGkaPBSX9W0NGE/B1wNO3oWrd76QszVGrdpLggNqcO8+LR6MB0CNqtp9Q8NoeVrxNVbzM9hqA==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
@@ -1135,6 +1128,7 @@ packages:
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.16.0
       eslint-plugin-react: 7.30.0_eslint@8.16.0
       eslint-plugin-react-hooks: 4.5.0_eslint@8.16.0
+      next: 12.1.6_react-dom@18.0.0+react@18.0.0
       typescript: 4.6.4
     transitivePeerDependencies:
       - supports-color
@@ -1960,7 +1954,6 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
-    dev: false
 
   /node-releases/2.0.5:
     resolution: {integrity: sha512-U9h1NLROZTq9uE1SNffn6WuPDg8icmi3ns4rEl/oTfIle4iLjTliCzgTsbaIFMq/Xn078/lfY/BL0GWZ+psK4Q==}
@@ -2473,7 +2466,6 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
-    dev: false
 
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -2722,7 +2714,6 @@ packages:
         optional: true
     dependencies:
       react: 18.0.0
-    dev: false
 
   /stylehacks/5.1.0_postcss@8.4.14:
     resolution: {integrity: sha512-SzLmvHQTrIWfSgljkQCw2++C9+Ne91d/6Sp92I8c5uHTcy/PgeHamwITIbBW9wnFTY/3ZfSXR9HIL6Ikqmcu6Q==}

@@ -1,6 +1,6 @@
 {
   "name": "@nextail/core",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "license": "MIT",
   "private": false,
   "author": "a-smiggle",
@@ -9,6 +9,7 @@
     "url": "https://github.com/a-smiggle/nextail.git",
     "directory": "packages/core"
   },
+  "main": "lib/index",
   "files": [
     "/lib"
   ],

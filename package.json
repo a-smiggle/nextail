@@ -15,6 +15,9 @@
     "lint_fix": "eslint --fix --ext js,ts,tsx ."
   },
   "devDependencies": {
+    "next": "~12.1.0",
+    "react": "~18.0.0",
+    "react-dom": "~18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "eslint": "^8.14.0",
