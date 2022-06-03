@@ -29,4 +29,32 @@ export const MENU: MenuData[] = [
       { title: 'Table', link: '/components/table' },
     ],
   },
+  {
+    title: 'Layout',
+    subMenu: [
+      { title: 'Drawer', link: '/layout/drawer' },
+      { title: 'Footer', link: '/layout/footer' },
+      { title: 'Navbar', link: '/layout/navbar' },
+      { title: 'Sidebar', link: '/layout/sidebar' },
+      { title: 'Tabs', link: '/layout/tabs' },
+    ],
+  },
+  {
+    title: 'Hooks',
+    subMenu: [{ title: 'useLocation', link: '/hooks/uselocation' }],
+  },
+  {
+    title: 'Providers',
+    subMenu: [
+      { title: 'LayoutProvider', link: '/providers/layoutprovider' },
+      { title: 'ThemeProvider', link: '/providers/themeprovider' },
+    ],
+  },
+  {
+    title: 'Templates',
+    subMenu: [
+      { title: 'Layout V1', link: '/template/layout1' },
+      { title: 'Layout V2', link: '/template/layout2' },
+    ],
+  },
 ];

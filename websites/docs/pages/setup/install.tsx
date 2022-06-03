@@ -23,6 +23,27 @@ const Install: NextPage = () => {
               UnselectedButton={UnSelectedButton}
               data={[
                 {
+                  title: 'Next.JS Starter',
+                  content: (
+                    <div className="p-4">
+                      <h2>Next.js Installation</h2>
+                      <p className="pt-2">
+                        The easiest way to get started is to use the Next.js
+                        starter.
+                      </p>
+                      <p>
+                        Follow the instructions at:{' '}
+                        <a
+                          className="text-underline text-emerald-500"
+                          href="https://github.com/a-smiggle/nextail-template"
+                        >
+                          nextail-template
+                        </a>
+                      </p>
+                    </div>
+                  ),
+                },
+                {
                   title: 'Next.JS',
                   content: (
                     <div className="p-4">
