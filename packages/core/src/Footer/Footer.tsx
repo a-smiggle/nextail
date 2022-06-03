@@ -1,9 +1,9 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 
 import createStylings from '../stylings';
 import { FooterProps } from './types';
 
-function Footer(props: PropsWithChildren<FooterProps>): ReactElement {
+function Footer(props: FooterProps): ReactElement {
   const mainStylings = props.mainStylings ? props.mainStylings : {};
   if (mainStylings) {
     if (!mainStylings.layout) mainStylings.layout = {};
