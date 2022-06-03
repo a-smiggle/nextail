@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Fragment, ReactElement } from 'react';
 
 import Button from '../Button';
 import createStylings from '../stylings';
 import NavbarDropdown from './NavbarDropdown';
 import { NavbarProps } from './types';
 
-function Navbar(props: NavbarProps) {
+function Navbar(props: NavbarProps): ReactElement {
   const mainStylings = props.mainStylings ? props.mainStylings : {};
   if (mainStylings) {
     if (!mainStylings.layout) mainStylings.layout = {};
@@ -47,12 +47,14 @@ function Navbar(props: NavbarProps) {
       : 'items-center';
   }
 
+  const linkStylings = props.linkStylings ? props.linkStylings : {};
+
   function handleToggle() {
     if (props.toggle && props.open !== undefined) props.toggle(!props.open);
   }
 
   return (
-    <>
+    <Fragment>
       <nav
         className={
           props.mainStylings?.className
@@ -69,7 +71,11 @@ function Navbar(props: NavbarProps) {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`h-6 w-6 mr-6 ${props.linkStylings}`}
+                  className={`h-6 w-6 mr-6 ${
+                    props.linkStylings?.className
+                      ? props.linkStylings.className
+                      : createStylings(linkStylings)
+                  }`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -113,12 +119,10 @@ function Navbar(props: NavbarProps) {
               );
             })}
           </div>
-          <div className="flex items-center justify-between">
-            {props.data.buttons}
-          </div>
+          {props.data.buttons}
         </div>
       </nav>
-    </>
+    </Fragment>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 
 import Button from '../Button';
 import Dropdown from '../Dropdown';
@@ -11,7 +11,7 @@ interface CustomProps {
   dropdownItemStylings?: TailwindStylings;
 }
 
-function NavbarDropdown(props: CustomProps) {
+function NavbarDropdown(props: CustomProps): ReactElement {
   const [open, setOpen] = useState(false);
 
   return (
