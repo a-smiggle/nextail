@@ -1,6 +1,6 @@
 {
   "name": "@nextail/providers",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "license": "MIT",
   "private": false,
   "author": "a-smiggle",
@@ -12,6 +12,7 @@
   "files": [
     "/lib"
   ],
+  "main": "lib/index",
   "scripts": {
     "build": "pnpm run clean && pnpm run compile",
     "clean": "rimraf -rf ./lib",
