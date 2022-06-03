@@ -1,4 +1,9 @@
-import React, { PropsWithChildren, ReactElement, useRef } from 'react';
+import React, {
+  Fragment,
+  PropsWithChildren,
+  ReactElement,
+  useRef,
+} from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
 import createStylings from '../stylings';
@@ -15,12 +20,8 @@ export default function AlertContainer(
     backgroundStylings.background.backgroundColor = props.backgroundStylings
       ?.background?.backgroundColor
       ? props.backgroundStylings.background.backgroundColor
-      : 'bg-slate-700';
-    if (!backgroundStylings.effect) backgroundStylings.effect = {};
-    backgroundStylings.effect.opacity = props.backgroundStylings?.effect
-      ?.opacity
-      ? props.backgroundStylings.effect.opacity
-      : 'opacity-50';
+      : 'bg-slate-700/50';
+
     if (!backgroundStylings.layout) backgroundStylings.layout = {};
     backgroundStylings.layout.position = props.backgroundStylings?.layout
       ?.position
@@ -46,7 +47,7 @@ export default function AlertContainer(
     if (!mainStylings.layout) mainStylings.layout = {};
     mainStylings.layout.position = props.mainStylings?.layout?.position
       ? props.mainStylings?.layout?.position
-      : 'fixed';
+      : 'absolute';
     mainStylings.layout.top = props.mainStylings?.layout?.top
       ? props.mainStylings.layout.top
       : 'top-0';
@@ -74,14 +75,14 @@ export default function AlertContainer(
   useOnClickOutside(ref, handleOutsideClick);
 
   return (
-    <>
-      {props.backgroundStylings ? (
+    <Fragment>
+      {props.showBackdrop ? (
         <div
           className={`${
             props.backgroundStylings?.className
               ? props.backgroundStylings.className
               : createStylings(backgroundStylings)
-          } ${props.open ? 'z-50' : 'hidden'}`}
+          } ${props.open ? 'z-40' : 'hidden'}`}
         />
       ) : null}
       <div
@@ -94,6 +95,6 @@ export default function AlertContainer(
       >
         {props.children}
       </div>
-    </>
+    </Fragment>
   );
 }
