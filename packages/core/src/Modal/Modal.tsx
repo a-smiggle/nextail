@@ -37,7 +37,10 @@ export default function Modal(
     mainStylings.spacing.padding = props.mainStylings?.spacing?.padding
       ? props.mainStylings.spacing.padding
       : 'p-4';
-
+    if (!mainStylings.sizing) mainStylings.sizing = {};
+    mainStylings.sizing.maxWidth = props.mainStylings?.sizing?.maxWidth
+      ? props.mainStylings.sizing.maxWidth
+      : 'max-w-xs md:max-w-5xl';
     if (!mainStylings.background) mainStylings.background = {};
     mainStylings.background.backgroundColor = props.mainStylings?.background
       ?.backgroundColor
@@ -86,9 +89,10 @@ export default function Modal(
             : createStylings(mainStylings)
         }
       >
-        {props.header ? props.header : null}
-        {props.body ? props.body : null}
-        {props.footer ? props.footer : null}
+        {props.header && !props.children ? props.header : null}
+        {props.body && !props.children ? props.body : null}
+        {props.footer && !props.children ? props.footer : null}
+        {props.children}
       </div>
     </div>
   );
