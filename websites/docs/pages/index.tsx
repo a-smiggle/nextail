@@ -1,8 +1,11 @@
 import type { NextPage } from 'next';
-import React from 'react';
+import { useRouter } from 'next/router';
 
-const Home: NextPage = () => (
-  <h1 className="text-3xl font-bold underline">Hello world!</h1>
-);
+const Home: NextPage = () => {
+  const router = useRouter();
+
+  router.replace('/setup/install', '/');
+  return null;
+};
 
 export default Home;
