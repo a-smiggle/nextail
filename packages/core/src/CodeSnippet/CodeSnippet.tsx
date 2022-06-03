@@ -1,20 +1,26 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, ReactElement, useState } from 'react';
 import { useCopyToClipboard, useInterval } from 'usehooks-ts';
 
 import Button from '../Button';
 import createStylings from '../stylings';
 import { CodeSnippetProps } from './types';
 
-function CodeSnippet(props: PropsWithChildren<CodeSnippetProps>) {
+function CodeSnippet(props: PropsWithChildren<CodeSnippetProps>): ReactElement {
   const [value, copy] = useCopyToClipboard();
+  const [copied, setCopied] = useState(false);
 
   useInterval(
     () => {
-      // Your custom logic here
       copy('');
     },
-    // Delay in milliseconds or null to stop it
-    value ? props.copyTimeout || 10000 : null
+    value ? props.copyTimeout || null : null
+  );
+
+  useInterval(
+    () => {
+      setCopied(false);
+    },
+    copied ? 5000 : null
   );
 
   const mainStylings = props.mainStylings ? props.mainStylings : {};
@@ -37,7 +43,7 @@ function CodeSnippet(props: PropsWithChildren<CodeSnippetProps>) {
       : 'border-2';
     mainStylings.border.borderColor = props.mainStylings?.border?.borderColor
       ? props.mainStylings.border.borderColor
-      : `${value ? 'border-green-500' : 'border-slate-200'}`;
+      : `${copied ? 'border-green-500' : 'border-slate-200'}`;
     if (!mainStylings.background) mainStylings.background = {};
     mainStylings.background.backgroundColor = props.mainStylings?.background
       ?.backgroundColor
@@ -92,7 +98,12 @@ function CodeSnippet(props: PropsWithChildren<CodeSnippetProps>) {
     if (!buttonStylings.text) buttonStylings.text = {};
     buttonStylings.text.textColor = props.buttonStylings?.text?.textColor
       ? props.buttonStylings.text.textColor
-      : `${value ? 'text-green-500' : 'text-slate-300'}`;
+      : `${copied ? 'text-green-500' : 'text-slate-300'}`;
+  }
+
+  function handleClick() {
+    copy(props.data);
+    setCopied(true);
   }
 
   return (
@@ -104,9 +115,9 @@ function CodeSnippet(props: PropsWithChildren<CodeSnippetProps>) {
       }
     >
       <div className="absolute top-2 right-2">
-        <Button mainStylings={buttonStylings} onClick={() => copy(props.data)}>
+        <Button mainStylings={buttonStylings} onClick={() => handleClick()}>
           <div className="flex items-center">
-            {value ? 'Copied' : null}
+            {copied === true ? 'Copied' : null}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -125,7 +136,7 @@ function CodeSnippet(props: PropsWithChildren<CodeSnippetProps>) {
         </Button>
       </div>
       <div className="overflow-auto whitespace-pre">
-        <code onClick={() => copy(props.data)}>
+        <code onClick={() => handleClick()}>
           {props.children ? props.children : props.data}
         </code>
       </div>
