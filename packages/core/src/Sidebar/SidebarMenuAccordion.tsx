@@ -1,17 +1,22 @@
 import { useLocation } from '@nextail/hooks';
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, ReactElement, useEffect, useState } from 'react';
 
 import Button from '../Button';
 import createStylings from '../stylings';
 import { SidebarMenuAccordionProps } from './types';
 
-function SidebarMenuAccordion(props: SidebarMenuAccordionProps) {
-  const { pathname } = useLocation();
+function SidebarMenuAccordion(props: SidebarMenuAccordionProps): ReactElement {
+  const location = useLocation();
+  const pathname = location?.pathname;
+  const [childActive, setChildActive] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     props.menu?.subMenu?.forEach((item) => {
-      if (item.link === pathname) setOpen(true);
+      if (item.link === pathname) {
+        setOpen(true);
+        setChildActive(true);
+      }
     });
   }, [pathname]);
 
@@ -51,6 +56,9 @@ function SidebarMenuAccordion(props: SidebarMenuAccordionProps) {
       ? props.menuStylings.background.backgroundColor
       : 'hover:bg-gray-200 dark:hover:bg-gray-700';
     if (!menuStylings.text) menuStylings.text = {};
+    menuStylings.text.textTransform = props.menuStylings?.text?.textTransform
+      ? props.menuStylings.text.textTransform
+      : ' ';
     menuStylings.text.textColor = props.menuStylings?.text?.textColor
       ? props.menuStylings.text.textColor
       : 'text-gray-600 hover:text-gray-700 dark:text-gray-400  dark:hover:text-gray-200';
@@ -111,6 +119,10 @@ function SidebarMenuAccordion(props: SidebarMenuAccordionProps) {
       ? props.menuActiveStylings.background.backgroundColor
       : 'hover:bg-gray-200 dark:hover:bg-gray-700';
     if (!menuActiveStylings.text) menuActiveStylings.text = {};
+    menuActiveStylings.text.textTransform = props.menuActiveStylings?.text
+      ?.textTransform
+      ? props.menuActiveStylings.text.textTransform
+      : ' ';
     menuActiveStylings.text.textColor = props.menuActiveStylings?.text
       ?.textColor
       ? props.menuActiveStylings.text.textColor
@@ -137,13 +149,21 @@ function SidebarMenuAccordion(props: SidebarMenuAccordionProps) {
   }
 
   return (
-    <>
+    <Fragment>
       <a
         onClick={() => setOpen(!open)}
         className={`pr-8 ${
-          props.menuStylings?.className
-            ? props.menuStylings.className
-            : createStylings(menuStylings)
+          childActive
+            ? `justify-between ${
+                props.menuActiveStylings?.className
+                  ? props.menuActiveStylings.className
+                  : createStylings(menuActiveStylings)
+              }`
+            : `${
+                props.menuStylings?.className
+                  ? props.menuStylings.className
+                  : createStylings(menuStylings)
+              }`
         }`}
       >
         {props.menu?.icon}
@@ -207,7 +227,7 @@ function SidebarMenuAccordion(props: SidebarMenuAccordionProps) {
           );
         })}
       </nav>
-    </>
+    </Fragment>
   );
 }
 

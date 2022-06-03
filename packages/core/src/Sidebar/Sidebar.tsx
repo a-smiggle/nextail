@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import React, { ReactElement, useRef } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
 import createStylings from '../stylings';
 import SidebarMenu from './SidebarMenu';
 import { SidebarProps } from './types';
 
-function Sidebar(props: SidebarProps) {
+function Sidebar(props: SidebarProps): ReactElement {
   const mainStylings = props.mainStylings ? props.mainStylings : {};
   if (mainStylings) {
     if (!mainStylings.layout) mainStylings.layout = {};
@@ -42,7 +42,7 @@ function Sidebar(props: SidebarProps) {
   const ref = useRef(null);
 
   const handleOutsideClick = () => {
-    if (props.toggle) props.toggle(false);
+    if (props.open && props.toggle) props.toggle(false);
   };
 
   useOnClickOutside(ref, handleOutsideClick);
@@ -58,7 +58,7 @@ function Sidebar(props: SidebarProps) {
     >
       {props.data?.brand}
 
-      <div className="mt-6 flex flex-1 flex-col justify-between">
+      <div className="mt-6 flex flex-1 flex-col justify-between overflow-hidden hover:overflow-y-auto">
         <SidebarMenu
           menuStylings={props.menuStylings}
           menuActiveStylings={props.menuActiveStylings}

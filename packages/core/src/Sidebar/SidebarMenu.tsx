@@ -1,12 +1,13 @@
 import { useLocation } from '@nextail/hooks';
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import createStylings from '../stylings';
 import SidebarMenuAccordion from './SidebarMenuAccordion';
 import { SidebarMenuProps } from './types';
 
-function SidebarMenu(props: SidebarMenuProps) {
-  const { pathname } = useLocation();
+function SidebarMenu(props: SidebarMenuProps): ReactElement {
+  const location = useLocation();
+  const pathname = location?.pathname;
   const menuStylings = props.menuStylings ? props.menuStylings : {};
   if (menuStylings) {
     if (!menuStylings.layout) menuStylings.layout = {};
