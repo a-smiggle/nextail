@@ -84,10 +84,10 @@ function Carousel(props: CarouselProps): ReactElement {
 
   return (
     <div
-      className={`w-full flex overflow-hidden ${
+      className={`h-full flex overflow-hidden ${
         fullscreen
           ? 'fixed h-screen w-full top-0 left-0 z-50 bg-white dark:bg-slate-700'
-          : 'relative'
+          : 'w-fit relative'
       }`}
     >
       {props.data.map((data, index) => (
@@ -103,22 +103,25 @@ function Carousel(props: CarouselProps): ReactElement {
               : createStylings(mainStylings)
           }`}
         >
-          {data.element}
+          {!data.video ? data.element : null}
+          {index === current && data.video ? data.element : null}
           <div
             className={`${
               index === current ? '' : 'opacity-0'
             } w-full absolute bottom-0`}
           >
-            <div className="mx-auto mb-10 w-3/4 flex-col text-center">
-              <p className={createStylings(titleStylings)}>{data.title}</p>
-              <p className={createStylings(descriptionStylings)}>
-                {data.description}
-              </p>
-            </div>
+            {data.show ? (
+              <div className="mx-auto mb-10 w-3/4 flex-col text-center">
+                <p className={createStylings(titleStylings)}>{data.title}</p>
+                <p className={createStylings(descriptionStylings)}>
+                  {data.description}
+                </p>
+              </div>
+            ) : null}
           </div>
         </div>
       ))}
-      <div className="absolute inset-x-5 flex justify-between">
+      <div className="absolute inset-x-5 flex justify-between pt-5">
         {props.timer ? (
           <Button
             key={'Carousel-pause'}
