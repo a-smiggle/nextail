@@ -70,7 +70,7 @@ export default function LayoutProvider(props: PropsWithChildren<CustomProps>) {
       const storedLayout = JSON.parse(temp);
       if (storedLayout) {
         const tempSidebarOpen: boolean =
-          width <= 425 ? false : storedLayout.sidebarOpen || false;
+          width && width <= 425 ? false : storedLayout.sidebarOpen || false;
         setSidebarOpen(tempSidebarOpen);
         const tempLeftDrawerOpen: boolean =
           storedLayout.leftDrawerOpen || false;
