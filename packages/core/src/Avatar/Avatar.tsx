@@ -18,10 +18,17 @@ export default function Avatar(
     if (props.animateZoom) {
       if (!mainStylings.layout) mainStylings.layout = {};
 
-      mainStylings.layout.zIndex = 'hover:z-10';
+      mainStylings.layout.zIndex = props.mainStylings?.layout?.zIndex
+        ? props.mainStylings.layout.zIndex
+        : 'hover:z-10';
       if (!mainStylings.transform) mainStylings.transform = {};
-      mainStylings.transform.scale = 'hover:scale-125';
-      mainStylings.transform.transform = 'transform';
+      mainStylings.transform.scale = props.mainStylings?.transform?.scale
+        ? props.mainStylings.transform.scale
+        : 'hover:scale-125';
+      mainStylings.transform.transform = props.mainStylings?.transform
+        ?.transform
+        ? props.mainStylings.transform.transform
+        : 'transform';
       if (!mainStylings.transitionAnimation)
         mainStylings.transitionAnimation = {};
       mainStylings.transitionAnimation.transitionTimingFunction = props
@@ -106,21 +113,45 @@ export default function Avatar(
         : {};
       if (placeholderStylings) {
         if (!placeholderStylings.layout) placeholderStylings.layout = {};
-        placeholderStylings.layout.display = 'grid';
+        placeholderStylings.layout.display = props.placeholderStylings?.layout
+          ?.display
+          ? props.placeholderStylings.layout.display
+          : 'grid';
         if (!placeholderStylings.sizing) placeholderStylings.sizing = {};
-        placeholderStylings.sizing.height = 'h-20';
-        placeholderStylings.sizing.width = 'w-20';
+        placeholderStylings.sizing.height = props.placeholderStylings?.sizing
+          ?.height
+          ? props.placeholderStylings.sizing.height
+          : 'h-20';
+        placeholderStylings.sizing.width = props.placeholderStylings?.sizing
+          ?.width
+          ? props.placeholderStylings.sizing.width
+          : 'w-20';
         if (!placeholderStylings.flexboxGrid)
           placeholderStylings.flexboxGrid = {};
-        placeholderStylings.flexboxGrid.placeItems = 'place-items-center';
+        placeholderStylings.flexboxGrid.placeItems = props.placeholderStylings
+          ?.flexboxGrid?.placeItems
+          ? props.placeholderStylings.flexboxGrid.placeItems
+          : 'place-items-center';
         if (!placeholderStylings.border) placeholderStylings.border = {};
-        placeholderStylings.border.borderRadius = 'rounded-full';
+        placeholderStylings.border.borderRadius = props.placeholderStylings
+          ?.border?.borderRadius
+          ? props.placeholderStylings.border.borderRadius
+          : 'rounded-full';
         if (!placeholderStylings.background)
           placeholderStylings.background = {};
-        placeholderStylings.background.backgroundColor = 'bg-slate-700';
+        placeholderStylings.background.backgroundColor = props
+          .placeholderStylings?.background?.backgroundColor
+          ? props.placeholderStylings.background.backgroundColor
+          : 'bg-slate-700';
         if (!placeholderStylings.text) placeholderStylings.text = {};
-        placeholderStylings.text.textColor = 'text-slate-200';
-        placeholderStylings.text.fontSize = 'text-3xl';
+        placeholderStylings.text.textColor = props.placeholderStylings?.text
+          ?.textColor
+          ? props.placeholderStylings.text.textColor
+          : 'text-slate-200';
+        placeholderStylings.text.fontSize = props.placeholderStylings?.text
+          ?.fontSize
+          ? props.placeholderStylings.text.fontSize
+          : 'text-3xl';
       }
       return (
         <div
@@ -150,7 +181,7 @@ export default function Avatar(
 
   return (
     <a
-      title={props.placeholder}
+      title={props.title}
       href={props.link}
       className={
         props.mainStylings?.className
