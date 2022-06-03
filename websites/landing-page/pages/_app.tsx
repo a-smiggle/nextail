@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 
+import LayoutProvider from '@nextail/providers/LayoutProvider';
 import ThemeProvider from '@nextail/providers/ThemeProvider';
 import type { AppProps } from 'next/app';
 import React from 'react';
@@ -7,7 +8,9 @@ import React from 'react';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      <Component {...pageProps} />
+      <LayoutProvider>
+        <Component {...pageProps} />
+      </LayoutProvider>
     </ThemeProvider>
   );
 }

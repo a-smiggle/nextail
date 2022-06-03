@@ -167,7 +167,9 @@ const ButtonPage: NextPage = () => {
         <Button
           mainStylings={{
             className:
-              'px-6 py-2 text-center uppercase leading-light font-medium text-xs shadow-md rounded-full bg-emerald-500 inline-block text-white hover:invert',
+              'px-6 py-2 text-center uppercase leading-light font-medium 
+              text-xs shadow-md rounded-full bg-emerald-500 inline-block 
+              text-white hover:invert',
           }}
         >
           Hey
