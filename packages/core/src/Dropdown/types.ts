@@ -17,6 +17,7 @@ export interface DropdownProps {
   button: ReactNode;
   mainStylings?: TailwindStylings;
   itemStylings?: TailwindStylings;
+  disabledStylings?: TailwindStylings;
   dividerStylings?: TailwindStylings;
   items?: DropdownItem[];
 }

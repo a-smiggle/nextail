@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef } from 'react';
+import React, { Fragment, ReactElement, useRef } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
 import createStylings from '../stylings';
@@ -62,6 +62,18 @@ function Dropdown(props: DropdownProps): ReactElement {
       : 'hover:bg-gray-100 dark:hover:bg-gray-600';
   }
 
+  const disabledStylings = props.disabledStylings ? props.disabledStylings : {};
+  if (itemStylings) {
+    if (!disabledStylings.spacing) disabledStylings.spacing = {};
+    disabledStylings.spacing.padding = props.disabledStylings?.spacing?.padding
+      ? props.disabledStylings.spacing.padding
+      : 'px-4 py-2';
+    if (!disabledStylings.text) disabledStylings.text = {};
+    disabledStylings.text.textColor = props.disabledStylings?.text?.textColor
+      ? props.disabledStylings.text.textColor
+      : 'text-gray-200 dark:text-gray-600';
+  }
+
   const dividerStylings = props.dividerStylings ? props.dividerStylings : {};
   if (dividerStylings) {
     if (!dividerStylings.border) dividerStylings.border = {};
@@ -80,7 +92,7 @@ function Dropdown(props: DropdownProps): ReactElement {
   useOnClickOutside(ref, handleOutsideClick);
 
   return (
-    <>
+    <Fragment>
       <div className="relative">
         {props.button}
         <div
@@ -105,9 +117,26 @@ function Dropdown(props: DropdownProps): ReactElement {
                     <div className="block"></div>
                   </div>
                 );
+              if (item.disabled)
+                return (
+                  <div
+                    key={index}
+                    title={item.description}
+                    className={`${
+                      item.icon ? 'flex items-center' : 'block'
+                    } ${createStylings(disabledStylings)}`}
+                    role="menuitem"
+                  >
+                    {item.icon}
+                    <span className="flex flex-col">
+                      <span>{item.title}</span>
+                    </span>
+                  </div>
+                );
               return (
                 <a
                   key={index}
+                  title={item.description}
                   href={item.link ? item.link : '#'}
                   className={`${
                     item.icon ? 'flex items-center' : 'block'
@@ -124,7 +153,7 @@ function Dropdown(props: DropdownProps): ReactElement {
           </div>
         </div>
       </div>
-    </>
+    </Fragment>
   );
 }
 
