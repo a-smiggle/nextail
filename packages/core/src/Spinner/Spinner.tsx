@@ -19,7 +19,7 @@ function Spinner(props: SpinnerProps): ReactElement {
       : 'rounded-full';
     mainStylings.border.borderColor = props.mainStylings?.border?.borderColor
       ? props.mainStylings.border.borderColor
-      : 'border-black dark:border-slate-300';
+      : 'border-black';
     mainStylings.border.borderStyle = props.mainStylings?.border?.borderStyle
       ? props.mainStylings.border.borderStyle
       : 'border-solid';
@@ -51,7 +51,7 @@ function Spinner(props: SpinnerProps): ReactElement {
     closedStylings.border.borderColor = props.closedStylings?.border
       ?.borderColor
       ? props.closedStylings.border.borderColor
-      : 'border-gray-200';
+      : 'border-slate-300';
     closedStylings.border.borderStyle = props.closedStylings?.border
       ?.borderStyle
       ? props.closedStylings.border.borderStyle
@@ -64,7 +64,9 @@ function Spinner(props: SpinnerProps): ReactElement {
 
   if (props.closed)
     return (
-      <div className="relative">
+      <div
+        className={`relative ${mainStylings.sizing?.height} ${mainStylings.sizing?.width}`}
+      >
         <div
           className={`absolute ${
             props.closedStylings?.className
