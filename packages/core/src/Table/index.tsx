@@ -1,3 +1,4 @@
 import TableSimple from './TableSimple';
 
-export { TableSimple };
+const SimpleTable = TableSimple;
+export { SimpleTable, TableSimple };

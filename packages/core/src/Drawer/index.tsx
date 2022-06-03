@@ -62,3 +62,5 @@ export default function Drawer(
       );
   }
 }
+
+export { BottomDrawer, LeftDrawer, RightDrawer, TopDrawer };
