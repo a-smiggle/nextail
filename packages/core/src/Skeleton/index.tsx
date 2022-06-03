@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import Card from '../Card';
 import { SkeletonProps } from './types';
 
-const ImageCardSkeleton = (props: SkeletonProps) => (
+const ImageCardSkeleton = (props: SkeletonProps): ReactElement => (
   <Card
     mainStylings={
       props.cardStylings ? props.cardStylings : { spacing: { padding: ' ' } }
@@ -26,7 +26,7 @@ const ImageCardSkeleton = (props: SkeletonProps) => (
   </Card>
 );
 
-const ImageBottomCardSkeleton = (props: SkeletonProps) => (
+const ImageBottomCardSkeleton = (props: SkeletonProps): ReactElement => (
   <Card
     mainStylings={
       props.cardStylings ? props.cardStylings : { spacing: { padding: ' ' } }
@@ -49,7 +49,7 @@ const ImageBottomCardSkeleton = (props: SkeletonProps) => (
   </Card>
 );
 
-const ImageLeftCardSkeleton = (props: SkeletonProps) => (
+const ImageLeftCardSkeleton = (props: SkeletonProps): ReactElement => (
   <Card
     mainStylings={
       props.cardStylings
@@ -77,7 +77,7 @@ const ImageLeftCardSkeleton = (props: SkeletonProps) => (
   </Card>
 );
 
-const ImageRightCardSkelton = (props: SkeletonProps) => (
+const ImageRightCardSkelton = (props: SkeletonProps): ReactElement => (
   <Card
     mainStylings={
       props.cardStylings
