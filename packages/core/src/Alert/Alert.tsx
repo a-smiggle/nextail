@@ -41,7 +41,7 @@ export default function Alert(
       : 'h-16';
     mainStylings.sizing.width = props.mainStylings?.sizing?.width
       ? props.mainStylings.sizing.width
-      : 'w-74';
+      : 'w-full';
     mainStylings.sizing.maxWidth = props.mainStylings?.sizing?.maxWidth
       ? props.mainStylings.sizing.maxWidth
       : 'max-w-sm';

@@ -2,14 +2,14 @@ import { ReactNode } from 'react';
 
 import { TailwindStylings } from '../types';
 
-export interface AlertData {
-  buttons?: ReactNode;
-  icon?: ReactNode;
-  title?: string;
-  message?: string;
-  timestamp?: string;
-}
-
 export interface AlertProps {
   mainStylings?: TailwindStylings;
+}
+
+export interface AlertStyledProps extends AlertProps {
+  buttons?: ReactNode;
+  icon?: ReactNode;
+  title: string;
+  message: string;
+  timestamp?: string;
 }
