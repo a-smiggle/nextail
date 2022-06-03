@@ -11,6 +11,7 @@ export interface AccordionProps {
   data: AccordionData[];
   mainStylings?: TailwindStylings;
   titleStylings?: TailwindStylings;
+  titleActiveStylings?: TailwindStylings;
   childStylings?: TailwindStylings;
   flush?: boolean;
 }
@@ -18,5 +19,6 @@ export interface AccordionProps {
 export interface AccordionEntryProps {
   data: AccordionData;
   titleStylings?: TailwindStylings;
+  titleActiveStylings?: TailwindStylings;
   childStylings?: TailwindStylings;
 }

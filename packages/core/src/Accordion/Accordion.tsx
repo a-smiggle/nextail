@@ -26,6 +26,7 @@ function Accordion(props: AccordionProps): ReactElement {
       {props.data.map((data) => (
         <AccordionEntry
           titleStylings={props.titleStylings}
+          titleActiveStylings={props.titleActiveStylings}
           childStylings={props.childStylings}
           key={data.title}
           data={data}
