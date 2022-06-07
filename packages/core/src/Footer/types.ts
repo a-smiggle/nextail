@@ -3,8 +3,8 @@ import { ReactNode } from 'react';
 import { TailwindStylings } from '../types';
 
 export interface FooterLinks {
-  title?: string;
-  link?: string;
+  title: string;
+  link: string;
 }
 
 export interface FooterData {
