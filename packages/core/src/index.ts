@@ -44,7 +44,7 @@ import Dropdown, {
   WarningDropdown,
   WarningOutlineDropdown,
 } from './Dropdown';
-import Footer from './Footer';
+import Footer, { FooterV1 } from './Footer';
 import { LayoutV1, LayoutV2 } from './Layout';
 import Modal, {
   ErrorModal,
@@ -92,6 +92,7 @@ export {
   ErrorOutlineDropdown,
   ErrorProgress,
   Footer,
+  FooterV1,
   ImageBottomCard,
   ImageBottomCardSkeleton,
   ImageCard,
