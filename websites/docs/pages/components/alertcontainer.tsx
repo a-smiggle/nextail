@@ -1,9 +1,12 @@
-import { SuccessAlert } from '@nextail/core/Alert';
-import AlertContainer from '@nextail/core/AlertContainer';
-import { ErrorButton, SuccessButton } from '@nextail/core/Button';
-import CodeSnippet from '@nextail/core/CodeSnippet';
-import { TableSimple } from '@nextail/core/Table';
-import Tabs from '@nextail/core/Tabs';
+import {
+  AlertContainer,
+  CodeSnippet,
+  ErrorButton,
+  SuccessAlert,
+  SuccessButton,
+  TableSimple,
+  Tabs,
+} from '@nextail/core';
 import type { NextPage } from 'next';
 import React, { useState } from 'react';
 

@@ -1,25 +1,25 @@
-import Avatar from '@nextail/core/Avatar';
-import Button, {
+import {
+  Avatar,
+  Button,
+  CodeSnippet,
+  Dropdown,
   ErrorButton,
-  ErrorOutlineButton,
-  InfoButton,
-  SuccessButton,
-  SuccessOutlineButton,
-  WarningButton,
-  WarningOutlineButton,
-} from '@nextail/core/Button';
-import CodeSnippet from '@nextail/core/CodeSnippet';
-import Dropdown, {
   ErrorDropdown,
+  ErrorOutlineButton,
   ErrorOutlineDropdown,
+  InfoButton,
   InfoDropdown,
   SuccesDropdown,
   SuccesOutlineDropdown,
+  SuccessButton,
+  SuccessOutlineButton,
+  TableSimple,
+  Tabs,
+  WarningButton,
   WarningDropdown,
+  WarningOutlineButton,
   WarningOutlineDropdown,
-} from '@nextail/core/Dropdown';
-import { TableSimple } from '@nextail/core/Table';
-import Tabs from '@nextail/core/Tabs';
+} from '@nextail/core';
 import type { NextPage } from 'next';
 import React, { useState } from 'react';
 

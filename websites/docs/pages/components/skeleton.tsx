@@ -1,12 +1,12 @@
-import CodeSnippet from '@nextail/core/CodeSnippet';
 import {
+  CodeSnippet,
   ImageBottomCardSkeleton,
   ImageCardSkeleton,
   ImageLeftCardSkeleton,
   ImageRightCardSkelton,
-} from '@nextail/core/Skeleton';
-import { TableSimple } from '@nextail/core/Table';
-import Tabs from '@nextail/core/Tabs';
+  TableSimple,
+  Tabs,
+} from '@nextail/core';
 import type { NextPage } from 'next';
 import React from 'react';
 

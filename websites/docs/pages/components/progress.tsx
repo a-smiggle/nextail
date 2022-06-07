@@ -1,12 +1,13 @@
-import CodeSnippet from '@nextail/core/CodeSnippet';
-import Progress, {
+import {
+  CodeSnippet,
   ErrorProgress,
   InfoProgress,
+  Progress,
   SuccessProgress,
+  TableSimple,
+  Tabs,
   WarningProgress,
-} from '@nextail/core/Progress';
-import { TableSimple } from '@nextail/core/Table';
-import Tabs from '@nextail/core/Tabs';
+} from '@nextail/core';
 import type { NextPage } from 'next';
 import React, { useState } from 'react';
 import { useInterval } from 'usehooks-ts';

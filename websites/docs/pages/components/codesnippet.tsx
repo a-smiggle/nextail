@@ -1,10 +1,8 @@
-import CodeSnippet from '@nextail/core/CodeSnippet';
-import { TableSimple } from '@nextail/core/Table';
-import Tabs from '@nextail/core/Tabs';
+import { CodeSnippet, TableSimple, Tabs } from '@nextail/core';
 import type { NextPage } from 'next';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import dracula from 'prism-react-renderer/themes/dracula';
 import React from 'react';
+import { nextailTheme } from 'websites/docs/components/NextailPrismTheme';
 
 import { SelectedButton, UnSelectedButton } from '../../components/Buttons';
 import Layout from '../../components/Layout';
@@ -17,8 +15,6 @@ const exampleCode = `
 
 return () => <App />;
 `;
-const nextailTheme = dracula;
-nextailTheme.plain.backgroundColor = '';
 
 const CodeSnippetPage: NextPage = () => {
   return (

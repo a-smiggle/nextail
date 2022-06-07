@@ -1,6 +1,4 @@
-import CodeSnippet from '@nextail/core/CodeSnippet';
-import { TableSimple } from '@nextail/core/Table';
-import Tabs from '@nextail/core/Tabs';
+import { CodeSnippet, TableSimple, Tabs } from '@nextail/core';
 import type { NextPage } from 'next';
 import React from 'react';
 

@@ -1,16 +1,17 @@
-import Button, {
+import {
+  Button,
+  CodeSnippet,
   ErrorButton,
   ErrorOutlineButton,
   InfoButton,
   InfoOutlineButton,
   SuccessButton,
   SuccessOutlineButton,
+  TableSimple,
+  Tabs,
   WarningButton,
   WarningOutlineButton,
-} from '@nextail/core/Button';
-import CodeSnippet from '@nextail/core/CodeSnippet';
-import { TableSimple } from '@nextail/core/Table';
-import Tabs from '@nextail/core/Tabs';
+} from '@nextail/core';
 import type { NextPage } from 'next';
 import React from 'react';
 

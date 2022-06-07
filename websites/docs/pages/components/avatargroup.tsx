@@ -1,8 +1,10 @@
-import Avatar from '@nextail/core/Avatar';
-import AvatarGroup from '@nextail/core/AvatarGroup';
-import CodeSnippet from '@nextail/core/CodeSnippet';
-import { TableSimple } from '@nextail/core/Table';
-import Tabs from '@nextail/core/Tabs';
+import {
+  Avatar,
+  AvatarGroup,
+  CodeSnippet,
+  TableSimple,
+  Tabs,
+} from '@nextail/core';
 import type { NextPage } from 'next';
 import React from 'react';
 
