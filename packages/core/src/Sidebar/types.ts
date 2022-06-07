@@ -4,7 +4,7 @@ import { MenuData, TailwindStylings } from '../types';
 
 export interface SidebarData {
   brand?: ReactNode;
-  menu?: MenuData[];
+  menu: MenuData[];
   bottom?: ReactNode;
 }
 
