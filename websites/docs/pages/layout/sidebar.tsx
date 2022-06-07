@@ -1,8 +1,7 @@
-import CodeSnippet from '@nextail/core/CodeSnippet';
-import { TableSimple } from '@nextail/core/Table';
-import Tabs from '@nextail/core/Tabs';
+import { CodeSnippet, SidebarV1, TableSimple, Tabs } from '@nextail/core';
 import type { NextPage } from 'next';
 import React from 'react';
+import { MENU } from 'websites/docs/menu';
 
 import { SelectedButton, UnSelectedButton } from '../../components/Buttons';
 import Layout from '../../components/Layout';
@@ -12,7 +11,7 @@ const SidebarPage: NextPage = () => {
     <Layout>
       <div className="relative h-full w-full p-4">
         <div className="h-full rounded-xl bg-white p-4 dark:bg-slate-600">
-          <h1 className="font-bold">Alerts</h1>
+          <h1 className="font-bold">Sidebars</h1>
           <div className="p-4">
             <Tabs
               mainStylings={{
@@ -27,10 +26,16 @@ const SidebarPage: NextPage = () => {
                   title: 'Overview',
                   content: (
                     <div className="p-4">
-                      <h2>Alerts</h2>
-                      <p>An Alert is .....</p>
+                      <h2>Sidebars</h2>
+                      <p>
+                        Sidebars are useful when displaying a larger list of
+                        menu items. Also very useful on mobile displays.
+                      </p>
 
-                      <h3 className="pt-4">Basic Accordion</h3>
+                      <h3 className="pt-4">SidebarV1 (Sidebar)</h3>
+                      <p>
+                        Allows branding, menu data and a footer to be displayed.
+                      </p>
                       <div className="md:w-3/4">
                         <Tabs
                           mainStylings={{
@@ -45,7 +50,23 @@ const SidebarPage: NextPage = () => {
                               content: (
                                 <div className="flex justify-center rounded border-2 border-emerald-500 bg-emerald-200/20 py-4">
                                   <div className="rounded md:w-3/4">
-                                    EDIT ME
+                                    <div className="flex justify-center">
+                                      <SidebarV1
+                                        data={{
+                                          brand: (
+                                            <div className="text-3xl font-bold uppercase text-emerald-500">
+                                              Nextail
+                                            </div>
+                                          ),
+                                          menu: MENU,
+                                          bottom: (
+                                            <div className="flex justify-center text-3xl font-bold uppercase text-emerald-500">
+                                              Nextail
+                                            </div>
+                                          ),
+                                        }}
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               ),
@@ -54,7 +75,23 @@ const SidebarPage: NextPage = () => {
                               title: 'Code',
                               content: (
                                 <>
-                                  <CodeSnippet data={`EDIT ME`} />
+                                  <CodeSnippet
+                                    data={`<SidebarV1
+  data={{
+    brand: (
+      <div className="text-3xl font-bold uppercase text-emerald-500">
+        Nextail
+      </div>
+    ),
+    menu: MENU,
+    bottom: (
+      <div className="flex justify-center text-3xl font-bold uppercase text-emerald-500">
+        Nextail
+      </div>
+    ),
+  }}
+/>`}
+                                  />
                                 </>
                               ),
                             },
@@ -62,8 +99,8 @@ const SidebarPage: NextPage = () => {
                         />
                       </div>
 
-                      <h3 className="pt-4">Prestyled Alerts</h3>
-                      <p>EDIT ME</p>
+                      <h3 className="pt-4">SidebarV1 - Customised</h3>
+                      <p>Customised version of SidebarV1.</p>
                       <div className="md:w-3/4">
                         <Tabs
                           mainStylings={{
@@ -78,7 +115,39 @@ const SidebarPage: NextPage = () => {
                               content: (
                                 <div className="flex justify-center rounded border-2 border-emerald-500 bg-emerald-200/20 py-4">
                                   <div className="rounded md:w-3/4">
-                                    EDIT ME
+                                    <div className="flex justify-center">
+                                      <SidebarV1
+                                        mainStylings={{
+                                          background: {
+                                            backgroundColor:
+                                              'bg-emerald-200/25',
+                                          },
+                                        }}
+                                        menuStylings={{
+                                          text: {
+                                            textColor: 'text-orange-300',
+                                          },
+                                        }}
+                                        menuActiveStylings={{
+                                          text: {
+                                            textColor: 'text-orange-500',
+                                          },
+                                        }}
+                                        data={{
+                                          brand: (
+                                            <div className="text-3xl font-bold uppercase text-emerald-500">
+                                              Nextail
+                                            </div>
+                                          ),
+                                          menu: MENU,
+                                          bottom: (
+                                            <div className="flex justify-center text-3xl font-bold uppercase text-emerald-500">
+                                              Nextail
+                                            </div>
+                                          ),
+                                        }}
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               ),
@@ -87,40 +156,39 @@ const SidebarPage: NextPage = () => {
                               title: 'Code',
                               content: (
                                 <>
-                                  <CodeSnippet data={`EDIT ME`} />
-                                </>
-                              ),
-                            },
-                          ]}
-                        />
-                      </div>
-
-                      <h3 className="pt-4">Customised Alerts</h3>
-                      <p>EDIT ME</p>
-                      <div className="md:w-3/4">
-                        <Tabs
-                          mainStylings={{
-                            border: { borderWidth: ' ' },
-                            spacing: { padding: 'pl-2' },
-                          }}
-                          SelectedButton={SelectedButton}
-                          UnselectedButton={UnSelectedButton}
-                          data={[
-                            {
-                              title: 'Preview',
-                              content: (
-                                <div className="flex justify-center rounded border-2 border-emerald-500 bg-emerald-200/20 py-4">
-                                  <div className="rounded md:w-3/4">
-                                    EDIT ME
-                                  </div>
-                                </div>
-                              ),
-                            },
-                            {
-                              title: 'Code',
-                              content: (
-                                <>
-                                  <CodeSnippet data={`EDIT ME`} />
+                                  <CodeSnippet
+                                    data={`<SidebarV1
+  mainStylings={{
+    background: {
+      backgroundColor:
+        'bg-emerald-200/25',
+    },
+  }}
+  menuStylings={{
+    text: {
+      textColor: 'text-orange-300',
+    },
+  }}
+  menuActiveStylings={{
+    text: {
+      textColor: 'text-orange-500',
+    },
+  }}
+  data={{
+    brand: (
+      <div className="text-3xl font-bold uppercase text-emerald-500">
+        Nextail
+      </div>
+    ),
+    menu: MENU,
+    bottom: (
+      <div className="flex justify-center text-3xl font-bold uppercase text-emerald-500">
+        Nextail
+      </div>
+    ),
+  }}
+/>`}
+                                  />
                                 </>
                               ),
                             },
@@ -141,7 +209,9 @@ const SidebarPage: NextPage = () => {
                       </p>
 
                       <CodeSnippet
-                        data={`import { TableSimple } from '@nextail/core/Table';`}
+                        data={`import { Sidebar, SidebarV1 } from '@nextail/core';
+//or
+import Sidebar, { SidebarV1 } from '@nextail/core/Sidebar';`}
                       />
                     </div>
                   ),
@@ -161,10 +231,10 @@ const SidebarPage: NextPage = () => {
                       UnselectedButton={UnSelectedButton}
                       data={[
                         {
-                          title: 'AccordionProps',
+                          title: 'SidebarProps',
                           content: (
                             <>
-                              <h2 className="py-4">AccordionProps</h2>
+                              <h2 className="py-4">SidebarProps</h2>
                               <div className="w-full overflow-auto">
                                 <TableSimple
                                   titleStylings={{
@@ -180,16 +250,20 @@ const SidebarPage: NextPage = () => {
                                   border
                                   titles={['Property', 'Type', 'Required']}
                                   rows={[
-                                    ['data', 'AccordionData[]', 'yes'],
+                                    ['data', 'SidebarData', 'yes'],
                                     ['mainStylings', 'TailwindStylings', 'no'],
-                                    ['titleStylings', 'TailwindStylings', 'no'],
+                                    ['menuStylings', 'TailwindStylings', 'no'],
                                     [
-                                      'titleActiveStylings',
+                                      'menuActiveStylings',
                                       'TailwindStylings',
                                       'no',
                                     ],
-                                    ['childStylings', 'TailwindStylings', 'no'],
-                                    ['flush', 'boolean', 'no'],
+                                    [
+                                      'toggle',
+                                      'Dispatch<SetStateAction<boolean>>',
+                                      'no',
+                                    ],
+                                    ['open', 'boolean', 'no'],
                                   ]}
                                 />
                               </div>
@@ -197,10 +271,10 @@ const SidebarPage: NextPage = () => {
                           ),
                         },
                         {
-                          title: 'AccordionData',
+                          title: 'SidebarData',
                           content: (
                             <>
-                              <h2 className="py-4">AccordionData</h2>
+                              <h2 className="py-4">SidebarData</h2>
                               <div className="w-full overflow-auto">
                                 <TableSimple
                                   titleStylings={{
@@ -216,8 +290,9 @@ const SidebarPage: NextPage = () => {
                                   border
                                   titles={['Property', 'Type', 'Required']}
                                   rows={[
-                                    ['title', 'string', 'yes'],
-                                    ['content', 'ReactNode', 'yes'],
+                                    ['brand', 'ReactNode', 'no'],
+                                    ['menu', 'MenuData[]', 'yes'],
+                                    ['bottom', 'ReactNode', 'no'],
                                   ]}
                                 />
                               </div>
