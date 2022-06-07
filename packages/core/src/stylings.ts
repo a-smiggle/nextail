@@ -40,9 +40,7 @@ const createLayout = (layout: LayoutStylings): string =>
     layout.inset ? layout.inset : ''
   } ${layout.visibility ? layout.visibility : ''} ${
     layout.zIndex ? layout.zIndex : ''
-  }`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  }`.replace(/  +/g, ' ');
 
 const createFlexboxGrid = (flexboxGrid: FlexboxGridStylings): string =>
   `${flexboxGrid.flexBasis ? flexboxGrid.flexBasis : ''} ${
@@ -69,16 +67,12 @@ const createFlexboxGrid = (flexboxGrid: FlexboxGridStylings): string =>
     flexboxGrid.placeContent ? flexboxGrid.placeContent : ''
   } ${flexboxGrid.placeItems ? flexboxGrid.placeItems : ''} ${
     flexboxGrid.placeSelf ? flexboxGrid.placeSelf : ''
-  }`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  }`.replace(/  +/g, ' ');
 
 const createSpacing = (spacing: SpacingStylings): string =>
   `${spacing.padding ? spacing.padding : ''} ${
     spacing.margin ? spacing.margin : ''
-  } ${spacing.spaceBetween ? spacing.spaceBetween : ''}`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  } ${spacing.spaceBetween ? spacing.spaceBetween : ''}`.replace(/  +/g, ' ');
 
 const createSizing = (sizing: SizingStylings): string =>
   `${sizing.width ? sizing.width : ''} ${
@@ -87,9 +81,7 @@ const createSizing = (sizing: SizingStylings): string =>
     sizing.height ? sizing.height : ''
   } ${sizing.minHeight ? sizing.minHeight : ''} ${
     sizing.maxHeight ? sizing.maxHeight : ''
-  }`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  }`.replace(/  +/g, ' ');
 
 const createText = (text: TypographyStyling): string =>
   `${text.fontFamily ? text.fontFamily : ''} ${
@@ -114,9 +106,9 @@ const createText = (text: TypographyStyling): string =>
     text.textIndent ? text.textIndent : ''
   } ${text.verticalAlign ? text.verticalAlign : ''} ${
     text.whitespace ? text.whitespace : ''
-  } ${text.wordBreak ? text.wordBreak : ''} ${text.content ? text.content : ''}`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  } ${text.wordBreak ? text.wordBreak : ''} ${
+    text.content ? text.content : ''
+  }`.replace(/  +/g, ' ');
 
 const createBackground = (background: BackgroundStylings): string =>
   `${background.backgroundAttachment ? background.backgroundAttachment : ''} ${
@@ -127,9 +119,9 @@ const createBackground = (background: BackgroundStylings): string =>
     background.backgroundRepeat ? background.backgroundRepeat : ''
   } ${background.backgroundSize ? background.backgroundSize : ''} ${
     background.backgroundImage ? background.backgroundImage : ''
-  } ${background.gradientColorStops ? background.gradientColorStops : ''}`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  } ${
+    background.gradientColorStops ? background.gradientColorStops : ''
+  }`.replace(/  +/g, ' ');
 
 const createBorder = (border: BorderStylings): string =>
   `${border.borderRadius ? border.borderRadius : ''} ${
@@ -146,18 +138,20 @@ const createBorder = (border: BorderStylings): string =>
     border.ringWidth ? border.ringWidth : ''
   } ${border.ringColor ? border.ringColor : ''} ${
     border.ringOffsetWidth ? border.ringOffsetWidth : ''
-  } ${border.ringOffsetColor ? border.ringOffsetColor : ''}`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  } ${border.ringOffsetColor ? border.ringOffsetColor : ''}`.replace(
+    /  +/g,
+    ' '
+  );
 
 const createEffect = (effect: EffectStylings): string =>
   `${effect.boxShadow ? effect.boxShadow : ''} ${
     effect.boxShadowColor ? effect.boxShadowColor : ''
   } ${effect.opacity ? effect.opacity : ''} ${
     effect.mixBlendMode ? effect.mixBlendMode : ''
-  } ${effect.backgroundBlendMode ? effect.backgroundBlendMode : ''}`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  } ${effect.backgroundBlendMode ? effect.backgroundBlendMode : ''}`.replace(
+    /  +/g,
+    ' '
+  );
 
 const createFilter = (filter: FilterStylings): string =>
   `${filter.blur ? filter.blur : ''} ${
@@ -178,16 +172,12 @@ const createFilter = (filter: FilterStylings): string =>
     filter.backdropOpacity ? filter.backdropOpacity : ''
   } ${filter.backdropSaturate ? filter.backdropSaturate : ''} ${
     filter.backdropSepia ? filter.backdropSepia : ''
-  }`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  }`.replace(/  +/g, ' ');
 
 const createTable = (table: TableStylings): string =>
   `${table.borderCollapse ? table.borderCollapse : ''} ${
     table.borderCollapse ? table.borderCollapse : ''
-  }`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  }`.replace(/  +/g, ' ');
 
 const createTransitionAnimation = (
   transitionAnimation: TransitionAnimationStylings
@@ -208,18 +198,16 @@ const createTransitionAnimation = (
     transitionAnimation.transitionDelay
       ? transitionAnimation.transitionDelay
       : ''
-  } ${transitionAnimation.animation ? transitionAnimation.animation : ''}`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  } ${
+    transitionAnimation.animation ? transitionAnimation.animation : ''
+  }`.replace(/  +/g, ' ');
 
 const createTransform = (transform: TransformStylings): string =>
   `${transform.scale ? transform.scale : ''} ${
     transform.rotate ? transform.rotate : ''
   } ${transform.translate ? transform.translate : ''} ${
     transform.skew ? transform.skew : ''
-  } ${transform.transform ? transform.transform : ''}`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  } ${transform.transform ? transform.transform : ''}`.replace(/  +/g, ' ');
 
 const createInteractivity = (interactivity: InteractivityStylings): string =>
   `${interactivity.accentColor ? interactivity.accentColor : ''} ${
@@ -241,14 +229,13 @@ const createInteractivity = (interactivity: InteractivityStylings): string =>
 const createSvg = (svg: SvgStylings): string =>
   `${svg.fill ? svg.fill : ''} ${svg.stroke ? svg.stroke : ''} ${
     svg.strokeWidth ? svg.strokeWidth : ''
-  }`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  }`.replace(/  +/g, ' ');
 
 const createAccessibility = (accessibility: AccessibilityStylings): string =>
-  `${accessibility.screenReaders ? accessibility.screenReaders : ''}`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  `${accessibility.screenReaders ? accessibility.screenReaders : ''}`.replace(
+    /  +/g,
+    ' '
+  );
 
 function createStylings(stylings: TailwindStylings): string {
   return `${stylings.layout ? createLayout(stylings.layout) : ''} ${
@@ -269,9 +256,7 @@ function createStylings(stylings: TailwindStylings): string {
     stylings.interactivity ? createInteractivity(stylings.interactivity) : ''
   } ${stylings.svg ? createSvg(stylings.svg) : ''} ${
     stylings.accessibility ? createAccessibility(stylings.accessibility) : ''
-  }`
-    .replace(/^(\s*)|(\s*)$/g, '')
-    .replace(/\s+/g, ' ');
+  }`.replace(/  +/g, ' ');
 }
 
 export default createStylings;
