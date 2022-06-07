@@ -469,19 +469,19 @@ const Home: NextPage = () => {
       <div>
         <Drawer
           toggle={setTopDrawer}
-          postion="top"
+          position="top"
           open={topDrawer}
           mainStylings={{ background: { backgroundColor: 'bg-red-500' } }}
         >
           Top Drawer
         </Drawer>
-        <Drawer toggle={setBottomDrawer} postion="bottom" open={bottomDrawer}>
+        <Drawer toggle={setBottomDrawer} position="bottom" open={bottomDrawer}>
           Bottom Drawer
         </Drawer>
-        <Drawer toggle={setLeftDrawer} postion="left" open={leftDrawer}>
+        <Drawer toggle={setLeftDrawer} position="left" open={leftDrawer}>
           Left Drawer
         </Drawer>
-        <Drawer toggle={setRightDrawer} postion="right" open={rightDrawer}>
+        <Drawer toggle={setRightDrawer} position="right" open={rightDrawer}>
           Right Drawer
         </Drawer>
       </div>
