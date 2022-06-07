@@ -1,6 +1,10 @@
-import CodeSnippet from '@nextail/core/CodeSnippet';
-import { TableSimple } from '@nextail/core/Table';
-import Tabs from '@nextail/core/Tabs';
+import {
+  CodeSnippet,
+  ErrorButton,
+  ErrorOutlineButton,
+  TableSimple,
+  Tabs,
+} from '@nextail/core';
 import type { NextPage } from 'next';
 import React from 'react';
 
@@ -12,7 +16,7 @@ const TabsPage: NextPage = () => {
     <Layout>
       <div className="relative h-full w-full p-4">
         <div className="h-full rounded-xl bg-white p-4 dark:bg-slate-600">
-          <h1 className="font-bold">Alerts</h1>
+          <h1 className="font-bold">Tabs</h1>
           <div className="p-4">
             <Tabs
               mainStylings={{
@@ -27,10 +31,13 @@ const TabsPage: NextPage = () => {
                   title: 'Overview',
                   content: (
                     <div className="p-4">
-                      <h2>Alerts</h2>
-                      <p>An Alert is .....</p>
+                      <h2>Tabs</h2>
+                      <p>
+                        Tabs allow the toggling between different components.
+                      </p>
 
-                      <h3 className="pt-4">Basic Accordion</h3>
+                      <h3 className="pt-4">Tabs</h3>
+                      <p>A base tabs components ready to be customised.</p>
                       <div className="md:w-3/4">
                         <Tabs
                           mainStylings={{
@@ -45,7 +52,14 @@ const TabsPage: NextPage = () => {
                               content: (
                                 <div className="flex justify-center rounded border-2 border-emerald-500 bg-emerald-200/20 py-4">
                                   <div className="rounded md:w-3/4">
-                                    EDIT ME
+                                    <Tabs
+                                      SelectedButton={ErrorButton}
+                                      UnselectedButton={ErrorOutlineButton}
+                                      data={[
+                                        { title: 'Tab1', content: 'Tab1' },
+                                        { title: 'Tab2', content: 'Tab2' },
+                                      ]}
+                                    />
                                   </div>
                                 </div>
                               ),
@@ -54,7 +68,16 @@ const TabsPage: NextPage = () => {
                               title: 'Code',
                               content: (
                                 <>
-                                  <CodeSnippet data={`EDIT ME`} />
+                                  <CodeSnippet
+                                    data={`<Tabs
+  SelectedButton={ErrorButton}
+  UnselectedButton={ErrorOutlineButton}
+  data={[
+    { title: 'Tab1', content: 'Tab1' },
+    { title: 'Tab2', content: 'Tab2' },
+  ]}
+/>`}
+                                  />
                                 </>
                               ),
                             },
@@ -62,8 +85,8 @@ const TabsPage: NextPage = () => {
                         />
                       </div>
 
-                      <h3 className="pt-4">Prestyled Alerts</h3>
-                      <p>EDIT ME</p>
+                      <h3 className="pt-4">Customised Tabs</h3>
+                      <p>Customised tabs and content.</p>
                       <div className="md:w-3/4">
                         <Tabs
                           mainStylings={{
@@ -78,7 +101,34 @@ const TabsPage: NextPage = () => {
                               content: (
                                 <div className="flex justify-center rounded border-2 border-emerald-500 bg-emerald-200/20 py-4">
                                   <div className="rounded md:w-3/4">
-                                    EDIT ME
+                                    <Tabs
+                                      mainStylings={{
+                                        border: { borderWidth: ' ' },
+                                        spacing: { padding: 'pl-10' },
+                                      }}
+                                      SelectedButton={ErrorButton}
+                                      UnselectedButton={ErrorOutlineButton}
+                                      data={[
+                                        {
+                                          title: 'Tab1',
+                                          content: (
+                                            <div className="h-32 w-full rounded-2xl border-2 border-red-500 bg-slate-200/25 p-4">
+                                              <h1>Tab1 Content</h1>
+                                              <p>Content can go here.</p>
+                                            </div>
+                                          ),
+                                        },
+                                        {
+                                          title: 'Tab2',
+                                          content: (
+                                            <div className="h-32 w-full rounded-2xl border-2 border-red-500 bg-slate-200/25 p-4">
+                                              <h1>Tab2 Content</h1>
+                                              <p>Content can go here.</p>
+                                            </div>
+                                          ),
+                                        },
+                                      ]}
+                                    />
                                   </div>
                                 </div>
                               ),
@@ -87,40 +137,36 @@ const TabsPage: NextPage = () => {
                               title: 'Code',
                               content: (
                                 <>
-                                  <CodeSnippet data={`EDIT ME`} />
-                                </>
-                              ),
-                            },
-                          ]}
-                        />
-                      </div>
-
-                      <h3 className="pt-4">Customised Alerts</h3>
-                      <p>EDIT ME</p>
-                      <div className="md:w-3/4">
-                        <Tabs
-                          mainStylings={{
-                            border: { borderWidth: ' ' },
-                            spacing: { padding: 'pl-2' },
-                          }}
-                          SelectedButton={SelectedButton}
-                          UnselectedButton={UnSelectedButton}
-                          data={[
-                            {
-                              title: 'Preview',
-                              content: (
-                                <div className="flex justify-center rounded border-2 border-emerald-500 bg-emerald-200/20 py-4">
-                                  <div className="rounded md:w-3/4">
-                                    EDIT ME
-                                  </div>
-                                </div>
-                              ),
-                            },
-                            {
-                              title: 'Code',
-                              content: (
-                                <>
-                                  <CodeSnippet data={`EDIT ME`} />
+                                  <CodeSnippet
+                                    data={`<Tabs
+  mainStylings={{
+    border: { borderWidth: ' ' },
+    spacing: { padding: 'pl-10' },
+  }}
+  SelectedButton={ErrorButton}
+  UnselectedButton={ErrorOutlineButton}
+  data={[
+    {
+      title: 'Tab1',
+      content: (
+        <div className="h-32 w-full rounded-2xl border-2 border-red-500 bg-slate-200/25 p-4">
+          <h1>Tab1 Content</h1>
+          <p>Content can go here.</p>
+        </div>
+      ),
+    },
+    {
+      title: 'Tab2',
+      content: (
+        <div className="h-32 w-full rounded-2xl border-2 border-red-500 bg-slate-200/25 p-4">
+          <h1>Tab2 Content</h1>
+          <p>Content can go here.</p>
+        </div>
+      ),
+    },
+  ]}
+/>`}
+                                  />
                                 </>
                               ),
                             },
@@ -141,7 +187,9 @@ const TabsPage: NextPage = () => {
                       </p>
 
                       <CodeSnippet
-                        data={`import { TableSimple } from '@nextail/core/Table';`}
+                        data={`import Tabs from '@nextail/core/Tabs';
+//or
+import { Tabs } from '@nextail/core`}
                       />
                     </div>
                   ),
@@ -161,10 +209,10 @@ const TabsPage: NextPage = () => {
                       UnselectedButton={UnSelectedButton}
                       data={[
                         {
-                          title: 'AccordionProps',
+                          title: 'TabsProps',
                           content: (
                             <>
-                              <h2 className="py-4">AccordionProps</h2>
+                              <h2 className="py-4">TabsProps</h2>
                               <div className="w-full overflow-auto">
                                 <TableSimple
                                   titleStylings={{
@@ -180,16 +228,10 @@ const TabsPage: NextPage = () => {
                                   border
                                   titles={['Property', 'Type', 'Required']}
                                   rows={[
-                                    ['data', 'AccordionData[]', 'yes'],
+                                    ['data', 'TabData[]', 'yes'],
                                     ['mainStylings', 'TailwindStylings', 'no'],
-                                    ['titleStylings', 'TailwindStylings', 'no'],
-                                    [
-                                      'titleActiveStylings',
-                                      'TailwindStylings',
-                                      'no',
-                                    ],
-                                    ['childStylings', 'TailwindStylings', 'no'],
-                                    ['flush', 'boolean', 'no'],
+                                    ['SelectedButton', 'any', 'yes'],
+                                    ['UnselectedButton', 'any', 'yes'],
                                   ]}
                                 />
                               </div>
@@ -197,10 +239,10 @@ const TabsPage: NextPage = () => {
                           ),
                         },
                         {
-                          title: 'AccordionData',
+                          title: 'TabData',
                           content: (
                             <>
-                              <h2 className="py-4">AccordionData</h2>
+                              <h2 className="py-4">TabData</h2>
                               <div className="w-full overflow-auto">
                                 <TableSimple
                                   titleStylings={{
