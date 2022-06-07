@@ -9,7 +9,7 @@ import { DrawerProps } from './types';
 export default function Drawer(
   props: PropsWithChildren<DrawerProps>
 ): ReactElement {
-  switch (props.postion) {
+  switch (props.position) {
     case 'top':
       return (
         <TopDrawer
