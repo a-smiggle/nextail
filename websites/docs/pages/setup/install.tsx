@@ -33,7 +33,7 @@ const Install: NextPage = () => {
                       <p>
                         Follow the instructions at:{' '}
                         <a
-                          className="text-underline text-emerald-500"
+                          className="text-emerald-500 underline"
                           href="https://github.com/a-smiggle/nextail-template"
                         >
                           nextail-template

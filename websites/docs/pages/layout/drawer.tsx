@@ -50,9 +50,9 @@ const DrawerPage: NextPage = () => {
 
                       <h3 className="pt-4">Basic Drawers</h3>
                       <p>
-                        To set the possition of the drawer pass the position
-                        prop with either: 'top', 'bottom', 'right' or 'left'.
-                        Default is right if none passed.
+                        To set the position of the drawer pass the position prop
+                        with either: top, bottom, right or left. Default is
+                        right if none passed.
                       </p>
                       <div className="md:w-3/4">
                         <Tabs
