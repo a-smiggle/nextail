@@ -39,22 +39,4 @@ export const MENU: MenuData[] = [
       { title: 'Tabs', link: '/layout/tabs' },
     ],
   },
-  {
-    title: 'Hooks',
-    subMenu: [{ title: 'useLocation', link: '/hooks/uselocation' }],
-  },
-  {
-    title: 'Providers',
-    subMenu: [
-      { title: 'LayoutProvider', link: '/providers/layoutprovider' },
-      { title: 'ThemeProvider', link: '/providers/themeprovider' },
-    ],
-  },
-  {
-    title: 'Templates',
-    subMenu: [
-      { title: 'Layout V1', link: '/template/layout1' },
-      { title: 'Layout V2', link: '/template/layout2' },
-    ],
-  },
 ];
