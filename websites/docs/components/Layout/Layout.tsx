@@ -135,7 +135,7 @@ function Layout(props: CustomProps): ReactElement {
             </div>
           ),
           credit: (
-            <p className="text-center text-sm text-white">
+            <p className="text-center text-sm text-black dark:text-white">
               © 2022 NEXTAIL. Created by a-smiggle.
             </p>
           ),
