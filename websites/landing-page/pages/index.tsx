@@ -19,7 +19,7 @@ const Home: NextPage = () => {
     <>
       <Layout>
         <div
-          className="h-full w-full bg-white bg-cover bg-no-repeat dark:bg-emerald-900"
+          className="h-full w-full bg-white bg-cover bg-fixed bg-no-repeat dark:bg-emerald-900"
           style={{ backgroundImage: 'url(/EmeraldDivider.svg)' }}
         >
           <div className="h-screen w-full">
