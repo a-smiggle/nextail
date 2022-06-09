@@ -97,8 +97,6 @@ export default Home;
 
 If index page page would display '/'.
 
-## Nextail Utilities
-Work in progress.
 # Websites
 ## Landing Page
 
@@ -108,7 +106,6 @@ Work in progress.
 
 ## Documentation
 
-**Work in progress**
 [Nextail Documentaion](https://nextail-docs.vercel.app)
 
 [Source Code](/websites/docs/)

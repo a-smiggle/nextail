@@ -5,7 +5,6 @@
     "baseUrl": ".",
     "paths": {
       "@nextail/core/*": ["packages/core/src/*"],
-      "@nextail/utils/*": ["packages/utils/src/*"],
       "@nextail/providers/*": ["packages/providers/src/*"],
       "@nextail/hooks/*": ["packages/hooks/src/*"],
       "@nextail/*": ["packages/*/src"]
