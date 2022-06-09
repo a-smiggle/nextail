@@ -16,4 +16,5 @@ export interface NavbarProps {
   dropdownItemStylings?: TailwindStylings;
   toggle?: Dispatch<SetStateAction<boolean>>;
   open?: boolean;
+  allowHideBrand?: boolean;
 }

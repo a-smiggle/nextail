@@ -89,7 +89,7 @@ function NavbarSimple(props: NavbarProps): ReactElement {
               </Button>
             </div>
           ) : null}
-          {props.open ? null : props.data?.brand}
+          {props.open && props.allowHideBrand ? null : props.data?.brand}
         </div>
         {props.data?.buttons}
       </nav>
