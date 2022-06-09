@@ -1,6 +1,6 @@
 {
   "name": "@nextail/core",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "license": "MIT",
   "private": false,
   "author": "a-smiggle",
@@ -11,7 +11,8 @@
   },
   "main": "lib/index",
   "files": [
-    "/lib"
+    "/lib",
+    "*.css"
   ],
   "scripts": {
     "build": "pnpm run clean && pnpm run compile",
