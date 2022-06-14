@@ -23,6 +23,7 @@ const SuccessButton = (props: PropsWithChildren<ButtonProps>): ReactElement => {
 
   return (
     <Button
+      title={props.title}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
@@ -61,6 +62,7 @@ const SuccessOutlineButton = (
   }
   return (
     <Button
+      title={props.title}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
@@ -92,6 +94,7 @@ const WarningButton = (props: PropsWithChildren<ButtonProps>): ReactElement => {
 
   return (
     <Button
+      title={props.title}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
@@ -130,6 +133,7 @@ const WarningOutlineButton = (
   }
   return (
     <Button
+      title={props.title}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
@@ -160,6 +164,7 @@ const ErrorButton = (props: PropsWithChildren<ButtonProps>): ReactElement => {
   }
   return (
     <Button
+      title={props.title}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
@@ -199,6 +204,7 @@ const ErrorOutlineButton = (
 
   return (
     <Button
+      title={props.title}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
@@ -230,6 +236,7 @@ const InfoButton = (props: PropsWithChildren<ButtonProps>): ReactElement => {
 
   return (
     <Button
+      title={props.title}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
@@ -268,6 +275,7 @@ const InfoOutlineButton = (
   }
   return (
     <Button
+      title={props.title}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}

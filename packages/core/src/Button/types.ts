@@ -8,4 +8,5 @@ export interface ButtonProps {
   link?: string;
   type?: 'button' | 'submit' | 'reset';
   mainStylings?: TailwindStylings;
+  title?: string;
 }

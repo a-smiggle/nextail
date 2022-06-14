@@ -394,6 +394,7 @@ const ButtonPage: NextPage = () => {
                                     ['link', 'string', 'no'],
                                     ['type', 'button | submit | reset', 'no'],
                                     ['mainStylings', 'TailwindStylings', 'no'],
+                                    ['title', 'string', 'no'],
                                   ]}
                                 />
                               </div>

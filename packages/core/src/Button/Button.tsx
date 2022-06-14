@@ -47,6 +47,7 @@ function Button(props: PropsWithChildren<ButtonProps>): ReactElement {
   if (props.disabled)
     return (
       <button
+        title={props.title}
         disabled={props.disabled}
         type={props.type ? props.type : 'button'}
         className={`${
@@ -63,6 +64,7 @@ function Button(props: PropsWithChildren<ButtonProps>): ReactElement {
     return (
       <a href={props.link}>
         <button
+          title={props.title}
           type={props.type ? props.type : 'button'}
           className={
             props.mainStylings?.className
@@ -78,6 +80,7 @@ function Button(props: PropsWithChildren<ButtonProps>): ReactElement {
   if (props.onClick)
     return (
       <button
+        title={props.title}
         type={props.type ? props.type : 'button'}
         onClick={props.onClick}
         className={
@@ -92,6 +95,7 @@ function Button(props: PropsWithChildren<ButtonProps>): ReactElement {
 
   return (
     <button
+      title={props.title}
       type={props.type ? props.type : 'button'}
       className={
         props.mainStylings?.className
