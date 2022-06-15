@@ -20,6 +20,7 @@ export const MENU: MenuData[] = [
       { title: 'Badge', link: '/components/badge' },
       { title: 'Button', link: '/components/button' },
       { title: 'Card', link: '/components/card' },
+      { title: 'Clip', link: '/components/clip' },
       { title: 'Carousel', link: '/components/carousel' },
       { title: 'Code Snippet', link: '/components/codesnippet' },
       { title: 'Dropdown', link: '/components/dropdown' },
