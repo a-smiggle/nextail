@@ -1,5 +1,6 @@
 import { CodeSnippet, Tabs } from '@nextail/core';
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import React from 'react';
 
 import { SelectedButton, UnSelectedButton } from '../../components/Buttons';
@@ -404,12 +405,11 @@ const CardPage: NextPage = () => {
                       <p>
                         No imports are required for these components. Ensure you
                         have followed these{' '}
-                        <a
-                          className="text-emerald-500 underline"
-                          href="/setup/custom_css"
-                        >
-                          instructions.
-                        </a>
+                        <Link href="/setup/custom_css">
+                          <a className="text-emerald-500 underline">
+                            instructions.
+                          </a>
+                        </Link>
                       </p>
                     </div>
                   ),
