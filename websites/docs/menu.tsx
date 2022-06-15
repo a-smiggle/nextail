@@ -6,6 +6,7 @@ export const MENU: MenuData[] = [
     subMenu: [
       { title: 'Install', link: '/setup/install' },
       { title: 'Customise', link: '/setup/customise' },
+      { title: 'Custom CSS', link: '/setup/custom_css' },
     ],
   },
   {

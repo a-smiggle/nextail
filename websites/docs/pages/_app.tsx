@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '@nextail/core/nextail.css';
 
 import LayoutProvider from '@nextail/providers/LayoutProvider';
 import ThemeProvider from '@nextail/providers/ThemeProvider';
