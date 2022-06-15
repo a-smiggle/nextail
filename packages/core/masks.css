@@ -8,8 +8,8 @@
   mask-repeat: repeat;
 }
 
-.mask-contain {
-  mask-size: contain;
+.mask-cover {
+  mask-size: cover;
 }
 
 .mask-circle {
