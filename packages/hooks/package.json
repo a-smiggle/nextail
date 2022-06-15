@@ -17,7 +17,6 @@
     "build": "pnpm run clean && pnpm run compile",
     "clean": "rimraf -rf ./lib",
     "compile": "tsc -p tsconfig.build.json",
-    "build-types": "tsc --noEmit --pretty",
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {

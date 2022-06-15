@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build-types": "tsc --noEmit --pretty",
-    "clean": "rimraf .next out"
+    "clean": "rimraf .next"
   },
   "dependencies": {
     "next": "~12.1.0",

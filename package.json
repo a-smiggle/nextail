@@ -8,9 +8,8 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "setup": "rm -rf node_modules && rm -rf ./packages/*/node_modules && rm -rf ./websites/*/node_modules && rm -f pnpm-lock.yaml && pnpm i",
-    "build": "pnpm run setup && pnpm -r --filter ./packages run build && pnpm -r --filter ./websites run build",
-    "clean": "rimraf packages/*/lib && rimraf websites/*/.next && rimraf examples/*/.next",
+    "build": "pnpm run -r build",
+    "clean": "pnpm run -r clean",
     "lint": "eslint --ext js,ts,tsx .",
     "lint_fix": "eslint --fix --ext js,ts,tsx ."
   },

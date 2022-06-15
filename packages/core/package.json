@@ -16,7 +16,6 @@
   ],
   "scripts": {
     "build": "pnpm run clean && pnpm run compile",
-    "build-types": "tsc --noEmit --pretty",
     "clean": "rimraf -rf ./lib",
     "compile": "tsc -p tsconfig.build.json",
     "prepublishOnly": "pnpm run build"
