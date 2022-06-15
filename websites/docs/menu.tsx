@@ -24,6 +24,7 @@ export const MENU: MenuData[] = [
       { title: 'Carousel', link: '/components/carousel' },
       { title: 'Code Snippet', link: '/components/codesnippet' },
       { title: 'Dropdown', link: '/components/dropdown' },
+      { title: 'Mask', link: '/components/mask' },
       { title: 'Modal', link: '/components/modal' },
       { title: 'Progress', link: '/components/progress' },
       { title: 'Skeleton', link: '/components/skeleton' },
