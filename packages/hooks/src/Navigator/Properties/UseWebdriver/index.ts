@@ -1,3 +1,3 @@
-import Webdriver from './Webdriver';
+import useWebdriver from './UseWebdriver';
 
-export default Webdriver;
+export default useWebdriver;
