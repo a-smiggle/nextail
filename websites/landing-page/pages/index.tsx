@@ -10,11 +10,19 @@ import Button, {
 } from '@nextail/core/Button';
 import CodeSnippet from '@nextail/core/CodeSnippet';
 import type { NextPage } from 'next';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Layout from '../components/Layout';
 
 const Home: NextPage = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 500);
+  }, []);
+
   return (
     <>
       <Layout>
@@ -23,18 +31,34 @@ const Home: NextPage = () => {
           style={{ backgroundImage: 'url(/EmeraldDivider.svg)' }}
         >
           <div className="h-screen w-full">
-            <div className="flex h-screen flex-col items-center justify-center">
-              <h1 className="text-center text-5xl font-bold text-white md:text-7xl">
+            <div
+              className={`flex h-screen flex-col items-center justify-center ${
+                loaded ? 'fade-in-tb' : ''
+              }`}
+            >
+              <h1
+                fade-in-tb="1"
+                className={`text-center text-5xl font-bold text-black dark:text-white md:text-7xl`}
+              >
                 Easy to use.
               </h1>
-              <h1 className="text-center  text-5xl font-bold text-white md:text-7xl">
+              <h1
+                fade-in-tb="2"
+                className="text-center  text-5xl font-bold text-black dark:text-white md:text-7xl"
+              >
                 Easy to configure.
               </h1>
-              <h1 className="text-center  text-5xl font-bold text-white md:text-7xl">
+              <h1
+                fade-in-tb="3"
+                className="text-center  text-5xl font-bold text-black dark:text-white md:text-7xl"
+              >
                 Easy to customise.
               </h1>
               <br></br>
-              <p className="pt-6 text-center text-xl font-medium text-white md:text-lg">
+              <p
+                fade-in-tb="7"
+                className="pt-6 text-center text-xl font-medium dark:text-white md:text-lg"
+              >
                 A collection of React components built with TailwindCSS. Styled
                 and semi-styled options ready to be customised.
               </p>
@@ -53,7 +77,7 @@ const Home: NextPage = () => {
               <h1 className="pb-2 text-4xl font-bold text-white md:text-2xl">
                 Configuration
               </h1>
-              <p className="text-lg font-medium text-black">
+              <p className="text-lg font-medium text-white">
                 Edit your tailwind.config.js file.
               </p>
               <CodeSnippet
@@ -76,7 +100,7 @@ const Home: NextPage = () => {
               <h1 className="pb-2 text-4xl font-bold text-white md:text-2xl">
                 Use
               </h1>
-              <p className="text-lg font-medium text-black">
+              <p className="text-lg font-medium text-white">
                 Example of Next.JS page file found in pages folder.
               </p>
               <CodeSnippet
@@ -141,7 +165,7 @@ export default ButtonPage;
               <h1 className="pb-2 text-4xl font-bold text-white md:text-2xl">
                 Customise
               </h1>
-              <p className="text-lg font-medium text-black">
+              <p className="text-lg font-medium text-white">
                 Easily edit individual class variables or override with complete
                 control.
               </p>
