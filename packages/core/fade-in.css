@@ -1,0 +1,148 @@
+/*Idea found at https://github.com/theodorusclarence/theodorusclarence.com/blob/main/src/styles/globals.css */
+
+[fade-in-bt] {
+  @apply translate-y-10 opacity-0 transition duration-[500ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100;
+}
+.fade-in-bt [fade-in-bt] {
+  @apply translate-y-0 opacity-100;
+}
+.fade-in-bt [fade-in-bt='1'] {
+  @apply delay-100;
+}
+.fade-in-bt [fade-in-bt='2'] {
+  @apply delay-200;
+}
+.fade-in-bt [fade-in-bt='3'] {
+  @apply delay-300;
+}
+.fade-in-bt [fade-in-bt='4'] {
+  @apply delay-[400ms];
+}
+.fade-in-bt [fade-in-bt='5'] {
+  @apply delay-500;
+}
+.fade-in-bt [fade-in-bt='6'] {
+  @apply delay-[600ms];
+}
+.fade-in-bt [fade-in-bt='7'] {
+  @apply delay-700;
+}
+.fade-in-bt [fade-in-bt='8'] {
+  @apply delay-[800ms];
+}
+.fade-in-bt [fade-in-bt='9'] {
+  @apply delay-[900ms];
+}
+.fade-in-bt [fade-in-bt='10'] {
+  @apply delay-1000;}
+
+[fade-in-tb] {
+  @apply -translate-y-10 opacity-0 transition duration-[500ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100;
+}
+.fade-in-tb [fade-in-tb] {
+  @apply translate-y-0 opacity-100;
+}
+.fade-in-tb [fade-in-tb='1'] {
+  @apply delay-100;
+}
+.fade-in-tb [fade-in-tb='2'] {
+  @apply delay-200;
+}
+.fade-in-tb [fade-in-tb='3'] {
+  @apply delay-300;
+}
+.fade-in-tb [fade-in-tb='4'] {
+  @apply delay-[400ms];
+}
+.fade-in-tb [fade-in-tb='5'] {
+  @apply delay-500;
+}
+.fade-in-tb [fade-in-tb='6'] {
+  @apply delay-[600ms];
+}
+.fade-in-tb [fade-in-tb='7'] {
+  @apply delay-700;
+}
+.fade-in-tb [fade-in-tb='8'] {
+  @apply delay-[800ms];
+}
+.fade-in-tb [fade-in-tb='9'] {
+  @apply delay-[900ms];
+}
+.fade-in-tb [fade-in-tb='10'] {
+  @apply delay-[1000ms];
+}
+
+[fade-in-lr] {
+  @apply -translate-x-10 opacity-0 transition duration-[500ms] ease-out motion-reduce:translate-x-0 motion-reduce:opacity-100;
+}
+.fade-in-lr [fade-in-lr] {
+  @apply translate-x-0 opacity-100;
+}
+.fade-in-lr [fade-in-lr='1'] {
+  @apply delay-100;
+}
+.fade-in-lr [fade-in-lr='2'] {
+  @apply delay-200;
+}
+.fade-in-lr [fade-in-lr='3'] {
+  @apply delay-300;
+}
+.fade-in-lr [fade-in-lr='4'] {
+  @apply delay-[400ms];
+}
+.fade-in-lr [fade-in-lr='5'] {
+  @apply delay-500;
+}
+.fade-in-lr [fade-in-lr='6'] {
+  @apply delay-[600ms];
+}
+.fade-in-lr [fade-in-lr='7'] {
+  @apply delay-700;
+}
+.fade-in-lr [fade-in-lr='8'] {
+  @apply delay-[800ms];
+}
+.fade-in-lr [fade-in-lr='9'] {
+  @apply delay-[900ms];
+}
+.fade-in-lr [fade-in-lr='10'] {
+  @apply delay-1000;
+}
+
+[fade-in-rl] {
+  @apply translate-x-10 opacity-0 transition duration-[500ms] ease-out motion-reduce:translate-x-0 motion-reduce:opacity-100;
+}
+.fade-in-rl [fade-in-rl] {
+  @apply translate-x-0 opacity-100;
+}
+.fade-in-rl [fade-in-rl='1'] {
+  @apply delay-100;
+}
+.fade-in-rl [fade-in-rl='2'] {
+  @apply delay-200;
+}
+.fade-in-rl [fade-in-rl='3'] {
+  @apply delay-300;
+}
+.fade-in-rl [fade-in-rl='4'] {
+  @apply delay-[400ms];
+}
+.fade-in-rl [fade-in-rl='5'] {
+  @apply delay-500;
+}
+.fade-in-rl [fade-in-rl='6'] {
+  @apply delay-[600ms];
+}
+.fade-in-rl [fade-in-rl='7'] {
+  @apply delay-700;
+}
+.fade-in-rl [fade-in-rl='8'] {
+  @apply delay-[800ms];
+}
+.fade-in-rl [fade-in-rl='9'] {
+  @apply delay-[900ms];
+}
+.fade-in-rl [fade-in-rl='10'] {
+  @apply delay-1000;
+}

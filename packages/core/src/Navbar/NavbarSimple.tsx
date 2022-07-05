@@ -70,7 +70,7 @@ function NavbarSimple(props: NavbarProps): ReactElement {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`h-6 w-6 mr-6 ${
+                  className={`mr-6 h-6 w-6 ${
                     props.linkStylings?.className
                       ? props.linkStylings.className
                       : createStylings(linkStylings)

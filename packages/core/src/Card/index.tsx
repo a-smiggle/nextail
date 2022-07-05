@@ -31,7 +31,7 @@ const ImageCard = (props: CardData): ReactElement => (
 
     <div
       className={`px-4 pt-6 md:relative ${
-        props.buttons ? 'md:pb-20 pb-4' : 'pb-4'
+        props.buttons ? 'pb-4 md:pb-20' : 'pb-4'
       }`}
     >
       <h5 className="mb-2 text-xl font-medium text-gray-900 dark:text-gray-300">
@@ -54,7 +54,7 @@ const ImageBottomCard = (props: CardData): ReactElement => (
   <Card mainStylings={{ spacing: { padding: ' ' } }}>
     <div
       className={`px-4 pt-6 md:relative ${
-        props.buttons ? 'md:pb-20 pb-4' : 'pb-4'
+        props.buttons ? 'pb-4 md:pb-20' : 'pb-4'
       }`}
     >
       <h5 className="mb-2 text-xl font-medium text-gray-900 dark:text-gray-300">
@@ -95,7 +95,7 @@ const ImageLeftCard = (props: CardData): ReactElement => (
     />
     <div
       className={`relative flex w-full flex-col justify-start px-4 pt-6 ${
-        props.buttons ? 'md:pb-20 pb-4' : 'pb-2'
+        props.buttons ? 'pb-4 md:pb-20' : 'pb-2'
       }`}
     >
       <h5 className="mb-2 text-xl font-medium text-gray-900 dark:text-gray-300">
@@ -124,7 +124,7 @@ const ImageRightCard = (props: CardData): ReactElement => (
   >
     <div
       className={`relative flex w-full flex-col justify-start px-4 pt-6 ${
-        props.buttons ? 'md:pb-20 pb-4' : 'pb-2'
+        props.buttons ? 'pb-4 md:pb-20' : 'pb-2'
       }`}
     >
       <h5 className="mb-2 text-xl font-medium text-gray-900 dark:text-gray-300">

@@ -58,7 +58,7 @@ function LayoutV2(props: PropsWithChildren<LayoutProps>): ReactElement {
         </div>
         <div
           className={`sticky top-0 ${
-            props.navbar?.open ? 'w-[calc(100%-16rem)] left-64' : 'w-full'
+            props.navbar?.open ? 'left-64 w-[calc(100%-16rem)]' : 'w-full'
           } ${props.zIndexNavbar ? props.zIndexNavbar : 'z-20'}`}
         >
           <NavbarV2
@@ -82,7 +82,7 @@ function LayoutV2(props: PropsWithChildren<LayoutProps>): ReactElement {
         {props.footer ? (
           <div
             className={`relative ${
-              props.navbar?.open ? 'w-[calc(100%-16rem)] left-64' : ''
+              props.navbar?.open ? 'left-64 w-[calc(100%-16rem)]' : ''
             }`}
           >
             <FooterV1

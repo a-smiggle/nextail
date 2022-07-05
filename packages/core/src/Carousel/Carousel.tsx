@@ -84,10 +84,10 @@ function Carousel(props: CarouselProps): ReactElement {
 
   return (
     <div
-      className={`h-full flex overflow-hidden ${
+      className={`flex h-full overflow-hidden ${
         fullscreen
-          ? 'fixed h-screen w-full top-0 left-0 z-50 bg-white dark:bg-slate-700'
-          : 'w-fit relative'
+          ? 'fixed top-0 left-0 z-50 h-screen w-full bg-white dark:bg-slate-700'
+          : 'relative w-fit'
       }`}
     >
       {props.data.map((data, index) => (
@@ -108,7 +108,7 @@ function Carousel(props: CarouselProps): ReactElement {
           <div
             className={`${
               index === current ? '' : 'opacity-0'
-            } w-full absolute bottom-0`}
+            } absolute bottom-0 w-full`}
           >
             {data.show ? (
               <div className="mx-auto mb-10 w-3/4 flex-col text-center">
