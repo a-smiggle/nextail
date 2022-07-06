@@ -52,7 +52,7 @@ import Modal, {
   SuccessModal,
   WarningModal,
 } from './Modal';
-import { Navbar, NavbarSimple, NavbarV1, NavbarV2 } from './Navbar';
+import { Navbar, NavbarSimple, NavbarV1, NavbarV2, NavbarV3 } from './Navbar';
 import Progress, {
   ErrorProgress,
   InfoProgress,
@@ -116,6 +116,7 @@ export {
   NavbarSimple,
   NavbarV1,
   NavbarV2,
+  NavbarV3,
   PillBadge,
   Progress,
   RightDrawer,
