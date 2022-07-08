@@ -93,7 +93,7 @@ export default function NavbarV3(props: NavbarProps): ReactElement {
           </div>
         ) : null}
       </div>
-      <div className="hidden w-full lg:order-1 lg:block lg:w-2/5">
+      <div className="hidden w-full lg:order-1 lg:flex lg:w-2/5">
         {props.data?.menu?.map((data, index) => {
           if (data && data.subMenu && data.subMenu?.length > 0) {
             return (
