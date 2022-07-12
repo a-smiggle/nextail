@@ -1,6 +1,6 @@
 {
   "name": "@nextail/core",
-  "version": "0.12.2",
+  "version": "0.12.3",
   "license": "MIT",
   "private": false,
   "author": "a-smiggle",
@@ -21,6 +21,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "@nextail/hooks": "*",
     "usehooks-ts": "^2.5.3"
   },

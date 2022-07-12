@@ -1,3 +1,4 @@
+import { MenuIcon } from '@heroicons/react/outline';
 import React, { Fragment, ReactElement } from 'react';
 
 import Button from '../Button';
@@ -69,24 +70,13 @@ function Navbar(props: NavbarProps): ReactElement {
                 mainStylings={{ className: ' ' }}
                 onClick={() => handleToggle()}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`mr-6 h-6 w-6 ${
+                <MenuIcon
+                  className={`h-6 w-6 ${
                     props.linkStylings?.className
                       ? props.linkStylings.className
                       : createStylings(linkStylings)
                   }`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+                />
               </Button>
             </div>
           ) : null}

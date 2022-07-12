@@ -27,7 +27,7 @@ function Sidebar(props: SidebarProps): ReactElement {
     if (!mainStylings.spacing) mainStylings.spacing = {};
     mainStylings.spacing.padding = props.mainStylings?.spacing?.padding
       ? props.mainStylings.spacing.padding
-      : 'px-4 py-8';
+      : 'px-4 py-4';
     if (!mainStylings.background) mainStylings.background = {};
     mainStylings.background.backgroundColor = props.mainStylings?.background
       ?.backgroundColor
@@ -58,7 +58,11 @@ function Sidebar(props: SidebarProps): ReactElement {
     >
       {props.data?.brand}
 
-      <div className="mt-6 flex flex-1 flex-col justify-between overflow-hidden hover:overflow-y-auto">
+      <div
+        className={`flex flex-1 flex-col justify-between overflow-hidden hover:overflow-y-auto ${
+          props.data?.brand ? 'mt-6' : ''
+        }`}
+      >
         <SidebarMenu
           menuStylings={props.menuStylings}
           menuActiveStylings={props.menuActiveStylings}

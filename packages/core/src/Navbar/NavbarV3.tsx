@@ -1,3 +1,4 @@
+import { MenuIcon } from '@heroicons/react/outline';
 import React, { ReactElement } from 'react';
 
 import Button from '../Button';
@@ -23,7 +24,7 @@ export default function NavbarV3(props: NavbarProps): ReactElement {
     mainStylings.background.backgroundColor = props.mainStylings?.background
       ?.backgroundColor
       ? props.mainStylings.background.backgroundColor
-      : 'bg-white dark:bg-gray-800';
+      : 'bg-white dark:bg-slate-800';
     if (!mainStylings.spacing) mainStylings.spacing = {};
     mainStylings.spacing.padding = props.mainStylings?.spacing?.padding
       ? props.mainStylings.spacing.padding
@@ -66,29 +67,18 @@ export default function NavbarV3(props: NavbarProps): ReactElement {
       </div>
       <div className="block lg:hidden">
         {props.toggle && props.open !== undefined ? (
-          <div className="flex md:hidden">
+          <div className="flex lg:hidden">
             <Button
               mainStylings={{ className: ' ' }}
               onClick={() => handleToggle()}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className={`mr-6 h-6 w-6 ${
+              <MenuIcon
+                className={`h-6 w-6 ${
                   props.linkStylings?.className
                     ? props.linkStylings.className
                     : createStylings(linkStylings)
                 }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              />
             </Button>
           </div>
         ) : null}
