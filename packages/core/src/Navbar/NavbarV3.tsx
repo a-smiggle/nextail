@@ -62,10 +62,10 @@ export default function NavbarV3(props: NavbarProps): ReactElement {
           : createStylings(mainStylings)
       }
     >
-      <div className="w-auto lg:order-2 lg:w-1/5 lg:text-center">
+      <div className="w-auto md:order-2 md:w-1/5 md:text-center">
         {props.data?.brand}
       </div>
-      <div className="block lg:hidden">
+      <div className="block md:hidden">
         {props.toggle && props.open !== undefined ? (
           <div className="flex lg:hidden">
             <Button
@@ -83,7 +83,7 @@ export default function NavbarV3(props: NavbarProps): ReactElement {
           </div>
         ) : null}
       </div>
-      <div className="hidden w-full lg:order-1 lg:flex lg:w-2/5">
+      <div className="hidden w-full md:order-1 md:flex md:w-2/5">
         {props.data?.menu?.map((data, index) => {
           if (data && data.subMenu && data.subMenu?.length > 0) {
             return (
@@ -108,7 +108,7 @@ export default function NavbarV3(props: NavbarProps): ReactElement {
           );
         })}
       </div>
-      <div className="hidden w-full lg:order-3 lg:flex lg:w-2/5 lg:justify-end lg:text-right">
+      <div className="hidden w-full md:order-3 md:flex md:w-2/5 md:justify-end md:text-right">
         {props.data.buttons}
       </div>
     </nav>

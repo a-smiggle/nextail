@@ -4,7 +4,8 @@
   "private": false,
   "workspaces": [
     "packages/*",
-    "websites/*"
+    "websites/*",
+    "examples/*"
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
